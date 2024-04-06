@@ -1,63 +1,20 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { useTracker } from 'meteor/react-meteor-data';
-import { NavLink } from 'react-router-dom';
-import { Roles } from 'meteor/alanning:roles';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { Col, Row } from 'react-bootstrap';
 
-const NavBar = () => {
+const NavBar = () => (
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { currentUser } = useTracker(() => ({
-    currentUser: Meteor.user() ? Meteor.user().username : '',
-  }), []);
-
-  return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand as={NavLink} to="/">
-          <h2>meteor-application-template-react</h2>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-start">
-            {currentUser ? ([
-              <Nav.Link id="add-stuff-nav" as={NavLink} to="/add" key="add">Add Stuff</Nav.Link>,
-              <Nav.Link id="list-stuff-nav" as={NavLink} to="/list" key="list">List Stuff</Nav.Link>,
-            ]) : ''}
-            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
-            ) : ''}
-          </Nav>
-          <Nav className="justify-content-end">
-            {currentUser === '' ? (
-              <NavDropdown id="login-dropdown" title="Login">
-                <NavDropdown.Item id="login-dropdown-sign-in" as={NavLink} to="/signin">
-                  <PersonFill />
-                  Sign
-                  in
-                </NavDropdown.Item>
-                <NavDropdown.Item id="login-dropdown-sign-up" as={NavLink} to="/signup">
-                  <PersonPlusFill />
-                  Sign
-                  up
-                </NavDropdown.Item>
-              </NavDropdown>
-            ) : (
-              <NavDropdown id="navbar-current-user" title={currentUser}>
-                <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
-                  <BoxArrowRight />
-                  {' '}
-                  Sign
-                  out
-                </NavDropdown.Item>
-              </NavDropdown>
-            )}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-};
-
+  <NavBar className="d-flex flex-column min-vh-100">
+    <Col className="container-fluid">
+      <Row className="row flex-nowrap">
+        <Row className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-danger">
+          <Row className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <Row href="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+              <Row className="fs-5 d-none d-sm-inline">Menu</Row>
+            </Row>
+          </Row>
+        </Row>
+      </Row>
+    </Col>
+  </NavBar>
+);
 export default NavBar;
