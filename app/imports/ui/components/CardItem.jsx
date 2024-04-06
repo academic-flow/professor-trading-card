@@ -19,7 +19,7 @@ const CardItem = ({ card }) => {
   };
 
   return (
-    <div className="col">
+    <div className="col" style={{ marginBottom: '20px' }}>
       <Card style={{ width: '18rem' }}>
         <Card.Title>{card.name}</Card.Title>
         <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
