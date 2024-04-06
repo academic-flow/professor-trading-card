@@ -1,9 +1,16 @@
 {
+  "cardData":[
+    {"name": "Pikachu", "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Pok%C3%A9mon_Pikachu_art.png/220px-Pok%C3%A9mon_Pikachu_art.png", "description": "dumb data", "owner": "john@foo.com", "rarity": "Common"},
+    {"name": "Raichu", "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/026.png", "description": "dumb data", "owner": "john@foo.com", "rarity": "Uncommon"},
+    {"name": "Mewtwo", "image": "https://upload.wikimedia.org/wikipedia/en/4/43/Pok%C3%A9mon_Mewtwo_art.png", "description": "dumb data", "owner": "john@foo.com", "rarity": "Mythic"},
+    {"name": "Bulbasaur", "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "john@foo.com", "rarity": "Common"},
+    {"name": "Adam Winfield-Smith", "image": "https://media.licdn.com/dms/image/D5603AQHTQsoPz1MmdQ/profile-displayphoto-shrink_200_200/0/1705556659983?e=1717632000&v=beta&t=I3TdZGfCT95HbpI7LQDAhMxKGmhDfPOpyX03Pzm_fIo", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "john@foo.com", "rarity": "Uncommon"},
+    {"name": "Phat Ca", "image": "https://media.licdn.com/dms/image/D5635AQGVjxsdpjF7WQ/profile-framedphoto-shrink_200_200/0/1688445546124?e=1713002400&v=beta&t=HNKGEvujl-d8VoZi6GQXzEkjg3S7G9PhIgJ0BqPp27s", "description": "The one and only man", "owner": "john@foo.com", "rarity": "Mythic"}
+  ],
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
-
   "defaultData": [
     { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
