@@ -61,6 +61,6 @@ body {
 .nav-link:hover {
   color: yellow;
 }
-.sidebar-nav {
-  width: 160px;
+#sidebar {
+  width: 240px;
 }
