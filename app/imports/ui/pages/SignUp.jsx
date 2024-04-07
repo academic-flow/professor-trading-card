@@ -82,6 +82,7 @@ SignUp.propTypes = {
   }),
 };
 
+
 SignUp.defaultProps = {
   location: { state: '' },
 };
