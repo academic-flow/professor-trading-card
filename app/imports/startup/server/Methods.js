@@ -3,8 +3,8 @@ import { Accounts } from 'meteor/accounts-base';
 import { Keys } from '../../api/key/Key';
 
 Meteor.methods({
+  // key validate function check if the key exist in database and the status if everything good return admin for role
   keyValidate: function (key) {
-    // Check if the key exists in the database
     const keyData = Keys.collection.findOne({ key: key });
 
     if (!keyData) {
