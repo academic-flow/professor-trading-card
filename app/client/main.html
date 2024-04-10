@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -6,7 +8,66 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <title>Professor Trading Card</title>
 </head>
+<body class="d-flex flex-column min-vh-100">
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="col-auto px-0">
+    <div id="sidebar" class="collapse collapse-horizontal col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-danger">
+      <div id="sidebar-nav" class="d-flex flex-column align-items-center align-items-sm-start px-1 pt-2 text-white min-vh-100">
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="collapse fs-5 d-none d-sm-inline">Menu</span></a>
+        </a>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+          <li class="nav-item">
+            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+            </a>
+          </li>
+          <li  class="nav-item">
+            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+              <i class="fs-4 bi-collection "></i> <span class="ms-1 d-none d-sm-inline">Collection</span> </a>
+          </li>
+          <li  class="nav-item">
+            <a href="#" class="nav-link px-0 align-middle">
+              <i class="fs-4 bi-person"></i> <span class="ms-1 d-none d-sm-inline">Friends</span></a>
+          </li>
+          <li  class="nav-item">
+            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+              <i class="fs-4 bi-box"></i> <span class="ms-1 d-none d-sm-inline">CardList</span></a>
 
-<body class="h-100">
-  <div id="root" class="d-flex flex-column h-100"></div>
+        </ul>
+        <hr>
+        <div class="dropdown pb-4">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" class="rounded-circle">
+            <span class="d-none d-sm-inline mx-1">*username*</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+       </div>
+      </div>
+    </div>
+    <main class="col ps-md-2 pt-2">
+      <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border rounded-3 p-2 text-decoration-none "><i class="bi bi-list"></i> Menu</a>
+      <div class="page-header pt-3">
+        <h2>Title Test</h2>
+      </div>
+      <p class="lead"></p>
+      <hr>
+      <div class="row">
+        <div class="col-12">
+          <p>Text Goes in main</p>
+          <p>Anything can go here</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
 </body>
+</html>
