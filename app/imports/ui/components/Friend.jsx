@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Col, Image, Row } from 'react-bootstrap';
+import { Card, Col, Image, Row, Button } from 'react-bootstrap';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const Friend = ({ friend }) => (
   <Card className="h-100">
     <Card.Body>
       <Row className="g-0">
-        <Col md={4} className="text-center">
+        <Col md={3} className="text-center">
           <Image src={friend.image} width={100} roundedCircle />
         </Col>
-        <Col md={8}>
+        <Col md={7} className="px-2">
           <Card.Title>{friend.firstname} {friend.lastname}</Card.Title>
           <Card.Subtitle>{friend.address}</Card.Subtitle>
           <Card.Text>{friend.description}</Card.Text>
+        </Col>
+        <Col md={2} className="px-3 d-flex align-items-center justify-content-center">
+          <Button variant="danger">REMOVE FRIEND</Button>
         </Col>
       </Row>
     </Card.Body>
