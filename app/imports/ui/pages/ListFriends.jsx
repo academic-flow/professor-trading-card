@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Col, Container, Row, Form, Button } from 'react-bootstrap';
+import { Col, Container, Row, Form, Button, InputGroup } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Friend from '../components/Friend';
@@ -34,20 +34,20 @@ const ListFriends = () => {
         <Col>
           <h1 className="text-center py-4">ProfTCG</h1>
 
-          <Form>
-            <Row className="justify-content-center">
-              <Col md={6}>
-                <Form.Group className="mb-3">
-                  <Form.Control className="text-center" type="text" placeholder="Add friend by typing in their username." />
-                </Form.Group>
-              </Col>
-              <Col md={3}>
+          <Row className="justify-content-center">
+            <Col md={7}>
+              <InputGroup className="mb-4">
+                <Form.Control
+                  className="text-center"
+                  type="text"
+                  placeholder="Add friend by typing in their username."
+                />
                 <Button variant="primary" type="submit">
                   Submit
                 </Button>
-              </Col>
-            </Row>
-          </Form>
+              </InputGroup>
+            </Col>
+          </Row>
 
           <Col className="text-center">
             <h2>Your Friends List</h2>

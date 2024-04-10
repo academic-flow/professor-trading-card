@@ -26,3 +26,8 @@ body {
   padding-top: 10px;
   padding-bottom: 20px;
 }
+
+/* Makes the placeholder in the text box disappear when you click it */
+input:focus::placeholder {
+  color: transparent;
+}
