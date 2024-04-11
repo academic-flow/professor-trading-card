@@ -1,72 +1,76 @@
 import React from 'react';
-import './style/navbar.css';
-import { Container, Row, Col, Collapse, Nav, Dropdown } from 'react-bootstrap';
+import '../../../public/style/navbar.css'
+import { Collection, House, CardList, People, List } from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-function NavBar() {
-  return (
-    <Container fluid>
-      <Row className="flex-nowrap">
-        <Col className="px-0">
-          <Collapse in={true} className="collapse-horizontal col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-danger" id="sidebar">
-            <div className="d-flex flex-column align-items-center align-items-sm-start px-1 pt-2 text-white min-vh-100" id="sidebar-nav">
-              <a href="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <span className="collapse fs-5 d-none d-sm-inline">Menu</span>
-              </a>
-              <Nav className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                <Nav.Item>
-                  <Nav.Link href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                    <i className="fs-4 bi-house"></i> <span className="ms-1 d-none d-sm-inline">Home</span>
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                    <i className="fs-4 bi-collection "></i> <span className="ms-1 d-none d-sm-inline">Collection</span>
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link href="#" className="nav-link px-0 align-middle">
-                    <i className="fs-4 bi-person"></i> <span className="ms-1 d-none d-sm-inline">Friends</span>
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link href="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 align-middle ">
-                    <i className="fs-4 bi-box"></i> <span className="ms-1 d-none d-sm-inline">CardList</span>
-                  </Nav.Link>
-                </Nav.Item>
-              </Nav>
-              <hr />
-              <Dropdown className="pb-4">
-                <Dropdown.Toggle as="a" className="d-flex align-items-center text-white text-decoration-none" id="dropdownUser1">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" className="rounded-circle" />
-                  <span className="d-none d-sm-inline mx-1">*username*</span>
-                </Dropdown.Toggle>
-                <Dropdown.Menu className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                  <Dropdown.Item href="#">Profile</Dropdown.Item>
-                  <Dropdown.Divider />
-                  <Dropdown.Item href="#">Sign out</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-          </Collapse>
-        </Col>
-        <Col className="ps-md-2 pt-2">
-          <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none "><i className="bi bi-list"></i> Menu</a>
-          <div className="page-header pt-3">
-            <h2>Title Test</h2>
-          </div>
-          <p className="lead"></p>
-          <hr />
-          <Row>
-            <Col>
-              <p>Text Goes in main</p>
-              <p>Anything can go here</p>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Container>
-  );
-}
 
-export default NavBar;
+const Navbar = () => {
+  return (
+    <div className="d-flex flex-column min-vh-100">
+      <div className="container-fluid">
+        <div className="row flex-nowrap">
+          <div className="col-auto px-0">
+            <div id="sidebar" className="collapse collapse-horizontal col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-danger">
+              <div id="sidebar-nav" className="d-flex flex-column align-items-center align-items-sm-start px-1 pt-2 text-white min-vh-100">
+                <a href="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                  <span className="collapse fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                  <li className="nav-item">
+                    <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                      <House className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Home</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                      <Collection className="fs-4 text-white" /> <span className="ms-1 d-none d-sm-inline text-white">Collection</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a href="#" className="nav-link px-0 align-middle">
+                      <People className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Friends</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a href="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 align-middle ">
+                      <CardList className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">CardList</span>
+                    </a>
+                  </li>
+                </ul>
+                <hr />
+                <div className="dropdown pb-4">
+                  <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" className="rounded-circle" />
+                    <span className="d-none d-sm-inline mx-1">*username*</span>
+                  </a>
+                  <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a className="dropdown-item" href="#">Profile</a></li>
+                    <li><hr className="dropdown-divider" /></li>
+                    <li><a className="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <main className="col ps-md-2 pt-2">
+            <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none "><List className="fs-4" /> Menu</a>
+            <div className="page-header pt-3">
+              <h2>Title Test</h2>
+            </div>
+            <p className="lead"></p>
+            <hr />
+            <div className="row">
+              <div className="col-12">
+                <p>Text Goes in main</p>
+                <p>Anything can go here</p>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
+

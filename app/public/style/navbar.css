@@ -17,7 +17,7 @@
 }
 /* added */
 .nav-item:hover {
-  border-left: 3px solid #ffe18c;
+  border-left: 3px solid yellow;
   padding-top:0;
 }
 
