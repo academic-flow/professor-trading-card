@@ -11,6 +11,7 @@
     { "email": "john@foo.com", "password": "changeme" },
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" }
   ],
+
   "defaultData": [
     { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
@@ -28,6 +29,10 @@
     { "key": "8"},
     { "key": "9"},
     { "key": "10"}
+
+  ]
+
+
   ],
 
   "monti": {
