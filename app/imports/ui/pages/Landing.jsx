@@ -5,10 +5,7 @@ import { Link } from 'react-router-dom';
 const Landing = () => (
   <Container id="landing-page" fluid className="py-3">
     <Row className="align-middle text-center">
-      <Col xs={4} className="text-start">
-        <h1>NavBar</h1>
-      </Col>
-
+      <Col />
       <Col xs={8} className="d-flex flex-column justify-content-center">
         <h1>ProfessorTCG</h1>
       </Col>
