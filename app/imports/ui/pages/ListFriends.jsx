@@ -18,11 +18,7 @@ const ListFriends = () => (
         <Row className="justify-content-center">
           <Col md={7}>
             <InputGroup className="mb-4">
-              <Form.Control
-                className="text-center"
-                type="text"
-                placeholder="Add friend by typing in their username."
-              />
+              <Form.Control className="text-center" type="text" placeholder="Add friend by typing in their username." />
               <Button variant="primary" type="submit">
                 Submit
               </Button>
