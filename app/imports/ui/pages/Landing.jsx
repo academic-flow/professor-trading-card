@@ -1,17 +1,33 @@
 import React from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Col, Container, Row, Form, Button, FloatingLabel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-/* A simple static component to render some text for the landing page. */
 const Landing = () => (
   <Container id="landing-page" fluid className="py-3">
     <Row className="align-middle text-center">
-      <Col xs={4}>
-        <Image roundedCircle src="/images/meteor-logo.png" width="150px" />
-      </Col>
-
+      <Col />
       <Col xs={8} className="d-flex flex-column justify-content-center">
-        <h1>Welcome to this template</h1>
-        <p>Now get to work and modify this app!</p>
+        <h1>ProfessorTCG</h1>
+      </Col>
+    </Row>
+
+    <Row className="py-5">
+      <Col md={{ span: 4, offset: 6 }}>
+        <h2 className="text-center py-2">Login to your account</h2>
+        <Form>
+          <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3">
+            <Form.Control type="email" placeholder="name@example.com" />
+          </FloatingLabel>
+
+          <FloatingLabel controlId="floatingPassword" label="Password" className="mb-3">
+            <Form.Control type="password" placeholder="Password" />
+          </FloatingLabel>
+
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+          <Link to="/signup" className="px-5">Click here to Register</Link>
+        </Form>
       </Col>
     </Row>
   </Container>
