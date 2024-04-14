@@ -50,11 +50,6 @@ const NavBar = () => {
                       <CardList className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">CardList</span>
                     </a>
                   </li>
-                  <li className="nav-item">
-                    <a href="/notauthorized" className="nav-link px-0 align-middle ">
-                      <PeopleFill className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">TeacherButton</span>
-                    </a>
-                  </li>
                 </ul>
                 <hr/>
                 <div className="dropdown pb-4">
