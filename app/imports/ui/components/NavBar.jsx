@@ -32,7 +32,7 @@ const NavBar = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a href="/CardItem" className="nav-link px-0 align-middle">
+                    <a href="/list" className="nav-link px-0 align-middle">
                       <Collection className="fs-4 text-white" /> <span className="ms-1 d-none d-sm-inline text-white">Collection</span>
                     </a>
                   </li>
@@ -42,7 +42,7 @@ const NavBar = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a href="/list" className="nav-link px-0 align-middle ">
+                    <a href="/CardItem" className="nav-link px-0 align-middle ">
                       <CardList className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">CardList</span>
                     </a>
                   </li>
