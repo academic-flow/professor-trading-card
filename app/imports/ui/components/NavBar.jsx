@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../public/style/navbar.css'
-import { Collection, House, CardList, People, List } from 'react-bootstrap-icons';
+import { Collection, House, CardList, People, List, PeopleFill } from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../layouts/App.jsx';
@@ -13,6 +13,10 @@ import CardItem from './CardItem';
 import ListCard from '../pages/ListCard';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
+import ListStuffAdmin from '../pages/ListStuffAdmin';
+import LoadingSpinner from './LoadingSpinner';
+import PropTypes from 'prop-types';
+import NotAuthorized from '../pages/NotAuthorized';
 
 const NavBar = () => {
   return (
@@ -28,26 +32,31 @@ const NavBar = () => {
                 <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                   <li className="nav-item">
                     <a href="/home" className="nav-link px-0 align-middle">
-                      <House className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Home</span>
+                      <House className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">Home</span>
                     </a>
                   </li>
                   <li className="nav-item">
                     <a href="/list" className="nav-link px-0 align-middle">
-                      <Collection className="fs-4 text-white" /> <span className="ms-1 d-none d-sm-inline text-white">Collection</span>
+                      <Collection className="fs-4 text-white"/> <span className="ms-1 d-none d-sm-inline text-white">Collection</span>
                     </a>
                   </li>
                   <li className="nav-item">
                     <a href="/friendlist" className="nav-link px-0 align-middle">
-                      <People className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Friends</span>
+                      <People className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">Friends</span>
                     </a>
                   </li>
                   <li className="nav-item">
                     <a href="/CardItem" className="nav-link px-0 align-middle ">
-                      <CardList className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">CardList</span>
+                      <CardList className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">CardList</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a href="/notauthorized" className="nav-link px-0 align-middle ">
+                      <PeopleFill className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">TeacherButton</span>
                     </a>
                   </li>
                 </ul>
-                <hr />
+                <hr/>
                 <div className="dropdown pb-4">
                   <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" className="rounded-circle" />
@@ -69,8 +78,9 @@ const NavBar = () => {
               <Route path="*" element={<NotFound />} />
               <Route path="/friendlist" element={<ProtectedRoute><ListFriends /></ProtectedRoute>} />
               <Route path="/list" element={<ProtectedRoute><ListCard /></ProtectedRoute>} />
+              <Route path="/notauthorized" element={<NotAuthorized />} />
               <Route path="/signout" element={<SignOut />} />
-              <Route path="/CardItem" element={<CardItem card={1} />} />
+              <Route path="/CardItem" element={<CardItem  card={1}/>} />
               <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
             </Routes>
           </main>
@@ -83,5 +93,7 @@ const ProtectedRoute = ({ children }) => {
   const isLogged = Meteor.userId() !== null;
   return isLogged ? children : <Navigate to="/signin" />;
 };
+
+
 export default NavBar;
 

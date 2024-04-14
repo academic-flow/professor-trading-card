@@ -8,10 +8,6 @@ import '/public/style/friendListSearchBar.css';
 const ListFriends = () => (
   <Container className="py-3">
     <Row>
-      <Col md={4}>
-        <h1 className="py-4">NavBar</h1>
-      </Col>
-
       <Col>
         <h1 className="text-center py-4">ProfTCG</h1>
 
