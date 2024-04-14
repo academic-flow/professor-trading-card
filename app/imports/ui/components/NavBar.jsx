@@ -5,6 +5,24 @@ import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import '../../../public/style/navbar.css'
+import { Collection, House, CardList, People, List, PeopleFill } from 'react-bootstrap-icons';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import '../layouts/App.jsx';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Landing from '../pages/Landing';
+import NotFound from '../pages/NotFound';
+import ListFriends from '../pages/ListFriends';
+import SignOut from '../pages/SignOut';
+import CardItem from './CardItem';
+import ListCard from '../pages/ListCard';
+import SignIn from '../pages/SignIn';
+import SignUp from '../pages/SignUp';
+import ListStuffAdmin from '../pages/ListStuffAdmin';
+import LoadingSpinner from './LoadingSpinner';
+import PropTypes from 'prop-types';
+import NotAuthorized from '../pages/NotAuthorized';
 
 const NavBar = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker

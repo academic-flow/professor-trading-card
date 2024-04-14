@@ -24,9 +24,6 @@ const ListCard = () => {
   }, []);
   return (ready ? (
     <div className="d-flex flex-row justify-content-around">
-      <div id="leftside" style={{ flex: 1 }}>
-        <h3>Holder for navbar</h3>
-      </div>
       <div className="d-flex justify-content-center flex-column text-center align-items-center" id="rightside" style={{ flex: 2 }}>
         <h1>ProfTCG</h1>
         <h4>Your Card Collection List</h4>
