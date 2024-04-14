@@ -33,7 +33,6 @@ const SignUp = ({ location }) => {
         } else if (result === 'Account already exists for this key') {
           setError(result);
         } else {
-          console.log(result);
           Accounts.createUser({ email, password, role: result.role, username: email }, (err) => {
             if (err) {
               setError(err.reason);

@@ -1,68 +1,105 @@
-import React from 'react';
-// import { Meteor } from 'meteor/meteor';
-// import { useTracker } from 'meteor/react-meteor-data';
-// import LoadingSpinner from '../components/LoadingSpinner';
-import { Col, Container, Row, Form, Button, InputGroup, Card, Image } from 'react-bootstrap';
+import React, { useState, useRef } from 'react';
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
+import SimpleSchema from 'simpl-schema';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import { Col, Container, Row, Card, Alert } from 'react-bootstrap';
+import { AutoForm, TextField, ErrorsField, SubmitField, HiddenField } from 'uniforms-bootstrap5';
+import LoadingSpinner from '../components/LoadingSpinner';
 import '/public/style/friendListSearchBar.css';
+import { Friends } from '../../api/friend/Friend';
 
-const ListFriends = () => (
-  <Container className="py-3">
-    <Row>
-      <Col md={4}>
-        <h1 className="py-4">NavBar</h1>
-      </Col>
+import ReceiverFriendCard from '../components/ReceiverFriendCard';
+import SenderFriendCard from '../components/SenderFriendCard';
 
-      <Col>
-        <h1 className="text-center py-4">ProfTCG</h1>
+const ListFriends = () => {
+  const [error, setError] = useState('');
+  const schema = new SimpleSchema(Friends.schema);
+  const bridge = new SimpleSchema2Bridge(schema);
+  const formRef = useRef(null);
 
-        <Row className="justify-content-center">
-          <Col md={7}>
-            <InputGroup className="mb-4">
-              <Form.Control className="text-center" type="text" placeholder="Add friend by typing in their username." />
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            </InputGroup>
-          </Col>
-        </Row>
+  const submit = (doc) => {
+    const { sender, receiver } = doc;
+    Meteor.call('addFriend', sender, receiver, (err) => {
+      if (err) {
+        setError(err.reason);
+        console.error('Error:', err);
 
-        <Col className="text-center">
-          <h2>Your Friends List</h2>
+      } else {
+        setError('');
+        console.error('Error:', err);
+        if (formRef.current) {
+          formRef.current.reset();
+        }
+
+      }
+    });
+
+  };
+
+  const { ready, receiverFriends, senderFriends, friendRequest, currentUserName } = useTracker(() => {
+    const subscription = Meteor.subscribe(Friends.userPublicationName);
+    const rdy = subscription.ready();
+    const currentUser = Meteor.user();
+    const username = currentUser ? currentUser.username : null;
+    const receiverFriendItems = Friends.collection.find({ $and: [{ status: true }, { receiver: username }] }).fetch();
+    const senderFriendItems = Friends.collection.find({ $and: [{ status: true }, { sender: username }] }).fetch();
+    const friendRequest = Friends.collection.find({ status: false }).fetch();
+    return {
+      friendRequest: friendRequest,
+      receiverFriends: receiverFriendItems,
+      senderFriends: senderFriendItems,
+      ready: rdy,
+      currentUserName: username,
+    };
+  }, []);
+
+  return (ready ? (
+    <Container className="py-3">
+      <Row>
+        <Col md={4}>
+          <h1 className="py-4">NavBar</h1>
         </Col>
 
-        <Row xs={1} className="g-4 justify-content-center">
-          <Card className="h-100" style={{ width: '40rem' }}>
-            <Card.Body>
-              <Row className="g-0">
+        <Col>
+          <h1 className="text-center py-4">ProfTCG</h1>
 
-                <Col md={4} className="text-center">
-                  <Image src="https://github.com/philipmjohnson.png" width={100} roundedCircle />
-                </Col>
+          <Row className="justify-content-center">
+            <Col md={7}>
+              <AutoForm ref={formRef} schema={bridge} onSubmit={data => submit(data)}>
+                <Card>
+                  <Card.Body>
+                    <HiddenField name="sender" value={currentUserName} />
+                    <HiddenField name="status" value="false" />
+                    <TextField name="receiver" placeholder="Add friend by username" label={false} required="True" />
+                    <ErrorsField />
+                    <SubmitField />
+                  </Card.Body>
+                </Card>
+              </AutoForm>
+              {error === '' ? (
+                ''
+              ) : (
+                <Alert variant="danger">
+                  <Alert.Heading>Registration was not successful</Alert.Heading>
+                  {error}
+                </Alert>
+              )}
+            </Col>
+          </Row>
 
-                <Col className="px-3">
-                  <Card.Title>Username</Card.Title>
-                  <Card.Subtitle>email@address.com</Card.Subtitle>
-                  <Row className="py-2" />
-                  <Button variant="secondary">
-                    View Collection
-                  </Button>
-                </Col>
+          <Col className="text-center">
+            <h2>Your Friends List</h2>
+          </Col>
+          {receiverFriends.map((friend) => <ReceiverFriendCard key={friend._id} user={friend} />)}
+          {senderFriends.map((friend) => <SenderFriendCard key={friend._id} user={friend} />)}
 
-                <Col md={3} className="d-flex align-items-center justify-content-center">
-                  <Button variant="danger">
-                    REMOVE FRIEND
-                  </Button>
-                </Col>
+        </Col>
 
-              </Row>
-            </Card.Body>
-          </Card>
-        </Row>
-      </Col>
-
-      <Col md={1} />
-    </Row>
-  </Container>
-);
+        <Col md={1} />
+      </Row>
+    </Container>
+  ) : <LoadingSpinner />);
+};
 
 export default ListFriends;
