@@ -6,6 +6,8 @@ import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { Meteor } from 'meteor/meteor';
+import { Keys } from '../../api/key/Key';
 
 /**
  * SignUp component is similar to signin component, but we create a new user instead.
@@ -17,20 +19,46 @@ const SignUp = ({ location }) => {
   const schema = new SimpleSchema({
     email: String,
     password: String,
+    key: { type: String, optional: true },
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
   /* Handle SignUp submission. Create user account and a profile entry, then redirect to the home page. */
   const submit = (doc) => {
-    const { email, password } = doc;
-    Accounts.createUser({ email, username: email, password }, (err) => {
-      if (err) {
-        setError(err.reason);
-      } else {
-        setError('');
-        setRedirectToRef(true);
-      }
-    });
+    const { email, password, key } = doc;
+    if (key) {
+      Meteor.call('keyValidate', key, (err, result) => { // Call the keyValidate method
+        if (err) {
+          setError(err.reason);
+        } else if (result === 'Account already exists for this key') {
+          setError(result);
+        } else {
+          Accounts.createUser({ email, password, role: result.role, username: email }, (err) => {
+            if (err) {
+              setError(err.reason);
+            } else {
+              Meteor.call('keyChangeStatus', key, (err) => {
+                if (err) {
+                  setError(err.reason);
+                } else {
+                  setError('');
+                  setRedirectToRef(true);
+                }
+              });
+            }
+          });
+        }
+      });
+    } else {
+      Accounts.createUser({ email, password, username: email }, (err) => {
+        if (err) {
+          setError(err.reason);
+        } else {
+          setError('');
+          setRedirectToRef(true);
+        }
+      });
+    }
   };
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
@@ -51,6 +79,7 @@ const SignUp = ({ location }) => {
               <Card.Body>
                 <TextField name="email" placeholder="E-mail address" />
                 <TextField name="password" placeholder="Password" type="password" />
+                <TextField name="key" placeholder="Key" optional />
                 <ErrorsField />
                 <SubmitField />
               </Card.Body>
@@ -81,6 +110,7 @@ SignUp.propTypes = {
     state: PropTypes.string,
   }),
 };
+
 
 SignUp.defaultProps = {
   location: { state: '' },

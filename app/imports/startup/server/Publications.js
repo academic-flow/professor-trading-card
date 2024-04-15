@@ -1,13 +1,21 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Cards } from '../../api/card/Card';
-
+import { Friends } from '../../api/friend/Friend';
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
 Meteor.publish(Cards.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Cards.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Friends.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Friends.collection.find({ $or: [{ receiver: username }, { sender: username }] });
   }
   return this.ready();
 });
@@ -21,7 +29,14 @@ Meteor.publish(Cards.adminPublicationName, function () {
   return this.ready();
 });
 
-// alanning:roles publication
+Meteor.publish(Friends.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Friends.collection.find();
+  }
+  return this.ready();
+});
+
+// planning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {
   if (this.userId) {
