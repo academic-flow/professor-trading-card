@@ -53,5 +53,16 @@ Meteor.methods({
     return `Friend request sent to ${receiver}`;
 
   },
+  // Remove friend
+  removeFriend: function (data) {
+    const alreadyFriendC1 = Friends.collection.findOne({ $and: [{ sender: data.sender }, { receiver: data.receiver }, { status: true }] });
+    const alreadyFriendC2 = Friends.collection.findOne({ $and: [{ sender: data.receiver }, { receiver: data.sender }, { status: true }] });
+    if (alreadyFriendC1) {
+      Friends.collection.remove({ _id: alreadyFriendC1._id });
+    }
+    if (alreadyFriendC2) {
+      Friends.collection.remove({ _id: alreadyFriendC2._id });
+    }
+  },
 
 });
