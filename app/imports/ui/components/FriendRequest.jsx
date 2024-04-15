@@ -55,4 +55,12 @@ const FriendRequestCard = ({ request }) => {
   );
 };
 
+FriendRequestCard.propTypes = {
+  request: PropTypes.shape({
+    receiver: PropTypes.string,
+    sender: PropTypes.string,
+    status: PropTypes.bool,
+    _id: PropTypes.string,
+  }).isRequired,
+};
 export default FriendRequestCard;
