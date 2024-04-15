@@ -18,17 +18,18 @@ function MainPage() {
   return (
       <div>
         <Container fluid>
-        <Row>
-          <Col></Col>
-          <Col sm={6} className="text-center">
-            <h1>Welcome to ProfTCG</h1>
-          </Col>
-          <Col className="d-flex align-items-center justify-content-end"> {/* Adjust the size as needed */}
-            <PersonCircle size={64}/> {/* Assuming PersonCircle is a custom component */}
-          </Col>
-        </Row>
-      </Container>
+          <Row>
+            <Col></Col>
+            <Col sm={6} className="text-center">
+              <h1>Welcome to ProfTCG</h1>
+            </Col>
+            <Col className="d-flex align-items-center justify-content-end"> {/* Adjust the size as needed */}
+              <PersonCircle size={64}/> {/* Assuming PersonCircle is a custom component */}
+            </Col>
+          </Row>
+        </Container>
 
+        <br/>
 
 
         <div style={{ marginBottom: '20px' }}>
@@ -37,11 +38,20 @@ function MainPage() {
           </Container>
         </div>
 
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
         {/* Reusable Section component for Trade Requested */}
         <Section title="Trade requested from 'UserName'">
           <Col xs={6}></Col>
           <Col xs={6}></Col>
         </Section>
+
+        <br/>
+        <br/>
+        <br/>
 
         {/* Reusable Section component for Card Offered */}
         <Section title="Card Offered:">
@@ -49,11 +59,19 @@ function MainPage() {
           <Col xs={6}></Col>
         </Section>
 
+        <br/>
+        <br/>
+        <br/>
+
         {/* Reusable Section component for Card Wanted */}
         <Section title="Card Wanted:">
           <Col xs={6}></Col>
           <Col xs={6}></Col>
         </Section>
+
+        <br/>
+        <br/>
+        <br/>
 
         <div style={{ marginBottom: '20px' }} className="text-center">
           <p> Accept Trade? </p>
