@@ -8,7 +8,7 @@ import { AutoForm, TextField, ErrorsField, SubmitField, HiddenField } from 'unif
 import LoadingSpinner from '../components/LoadingSpinner';
 import '/public/style/friendListSearchBar.css';
 import { Friends } from '../../api/friend/Friend';
-
+import FriendRequestCard from '../components/FriendRequest';
 import ReceiverFriendCard from '../components/ReceiverFriendCard';
 import SenderFriendCard from '../components/SenderFriendCard';
 
@@ -44,7 +44,7 @@ const ListFriends = () => {
     const username = currentUser ? currentUser.username : null;
     const receiverFriendItems = Friends.collection.find({ $and: [{ status: true }, { receiver: username }] }).fetch();
     const senderFriendItems = Friends.collection.find({ $and: [{ status: true }, { sender: username }] }).fetch();
-    const friendRequest = Friends.collection.find({ status: false }).fetch();
+    const friendRequest = Friends.collection.find({ $and: [{ status: false }, { receiver: username }] }).fetch();
     return {
       friendRequest: friendRequest,
       receiverFriends: receiverFriendItems,
@@ -90,7 +90,10 @@ const ListFriends = () => {
           </Col>
           {receiverFriends.map((friend) => <ReceiverFriendCard key={friend._id} user={friend} />)}
           {senderFriends.map((friend) => <SenderFriendCard key={friend._id} user={friend} />)}
-
+          <Col className="text-center">
+            <h2>Friend Request</h2>
+          </Col>
+          {friendRequest.map((request) => <FriendRequestCard key={request._id} request={request} />)}
         </Col>
 
         <Col md={1} />

@@ -64,5 +64,14 @@ Meteor.methods({
       Friends.collection.remove({ _id: alreadyFriendC2._id });
     }
   },
+  confirmRequest: function (data) {
+    Friends.collection.update(
+      { $and: [{ sender: data.sender }, { receiver: data.receiver }] },
+      { $set: { status: true } },
+    );
+  },
+  rejectRequest: function (data) {
+    Friends.collection.remove({ $and: [{ sender: data.sender }, { receiver: data.receiver }, { status: false }] });
+  },
 
 });
