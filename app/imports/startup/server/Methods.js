@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Keys } from '../../api/key/Key';
 import { Friends } from '../../api/friend/Friend';
+import { Cards } from '../../api/card/Card';
 
 Meteor.methods({
   // key validate function check if the key exist in database and the status if everything good return admin for role
@@ -73,5 +74,9 @@ Meteor.methods({
   rejectRequest: function (data) {
     Friends.collection.remove({ $and: [{ sender: data.sender }, { receiver: data.receiver }, { status: false }] });
   },
-
+  gettingFriendCardCollection: function (data) {
+    const collection = Cards.collection.find({ owner: data }).fetch();
+    console.log(data)
+    return collection;
+  },
 });

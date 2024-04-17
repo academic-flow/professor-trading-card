@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Col, Row, Button, Card, Image } from 'react-bootstrap';
 import '/public/style/friendListSearchBar.css';
 import { Meteor } from 'meteor/meteor';
+import { Link } from 'react-router-dom';
+
 
 const ReceiverFriendCard = ({ user }) => {
   const removeFriend = () => {
@@ -27,9 +29,7 @@ const ReceiverFriendCard = ({ user }) => {
               <Card.Title>{user.receiver}</Card.Title>
               <Card.Subtitle>email@address.com</Card.Subtitle>
               <Row className="py-2" />
-              <Button variant="secondary">
-                View Collection
-              </Button>
+              <Link to={`/friendcollection/${user.receiver}`}>View Collection</Link>
             </Col>
 
             <Col md={3} className="d-flex align-items-center justify-content-center">
