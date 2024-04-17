@@ -46,7 +46,7 @@ const CardItem = ({ card }) => {
             <Card.Title>{card.name}</Card.Title>
             <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '300px' }}>
               <Card.Text>
-                Professor Details:
+                {card.description}
               </Card.Text>
             </Card.Body>
           </Card>
@@ -55,5 +55,15 @@ const CardItem = ({ card }) => {
   );
 };
 
+CardItem.propTypes = {
+  card: PropTypes.shape({
+    name: PropTypes.string,
+    image: PropTypes.string,
+    description: PropTypes.string,
+    rarity: PropTypes.string,
+    owner: PropTypes.string,
+    _id: PropTypes.string,
+  }).isRequired,
+};
 
 export default CardItem;
