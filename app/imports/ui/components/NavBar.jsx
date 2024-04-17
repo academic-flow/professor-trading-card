@@ -77,7 +77,7 @@ const NavBar = () => (
             <Route path="/signout" element={<SignOut />} />
             <Route path="/CardItem" element={<CardItem card={1} />} />
             <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-            <Route path="/friendcollection/:username" element={<ProtectedRoute><ViewCollection /></ProtectedRoute>} />
+            <Route path="/friendcollection/:friendUserName" element={<ProtectedRoute><ViewCollection /></ProtectedRoute>} />
           </Routes>
         </main>
       </div>

@@ -3,6 +3,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Keys } from '../../api/key/Key';
 import { Friends } from '../../api/friend/Friend';
 import { Cards } from '../../api/card/Card';
+import { Trades } from '../../api/trade/Trade';
 
 Meteor.methods({
   // key validate function check if the key exist in database and the status if everything good return admin for role
@@ -76,7 +77,34 @@ Meteor.methods({
   },
   gettingFriendCardCollection: function (data) {
     const collection = Cards.collection.find({ owner: data }).fetch();
-    console.log(data)
     return collection;
+  },
+  tradeCard: function (myCardID, selectedCardID, receiver, sender) {
+    const checkingTradeExistC1 = Trades.collection.findOne({ $and: [{ sender: sender }, { receiver: receiver }, { card_wanted: selectedCardID }, { card_offer: myCardID }] });
+    const checkingTradeExistC2 = Trades.collection.findOne({ $and: [{ sender: receiver }, { receiver: sender }, { card_wanted: myCardID }, { card_offer: selectedCardID }] });
+    if (checkingTradeExistC1) {
+      throw new Meteor.Error('already-pending', 'You already send asked for this trade');
+    }
+    if (checkingTradeExistC2) {
+      const friendStillHaveCard = Cards.collection.findOne({ $and: [{ _id: selectedCardID }, { owner: receiver }] });
+      const iStillHaveCard = Cards.collection.findOne({ $and: [{ _id: myCardID }, { owner: sender }] });
+      if (friendStillHaveCard && iStillHaveCard) {
+        Cards.collection.update(
+          { $and: [{ _id: selectedCardID }, { owner: receiver }] },
+          { $set: { owner: sender } },
+        );
+        Cards.collection.update(
+          { $and: [{ _id: myCardID }, { owner: sender }] },
+          { $set: { owner: receiver } },
+        );
+        Trades.collection.remove({ $and: [{ sender: receiver }, { receiver: sender }, { card_wanted: myCardID }, { card_offer: selectedCardID }] });
+
+        return 'success trade';
+      }
+      throw new Meteor.Error("can-not-trade', 'Cannot trade either you or your friend don't own the card anymore");
+
+    }
+    Trades.collection.insert({ sender: sender, receiver: receiver, card_wanted: selectedCardID, card_offer: myCardID });
+    return 'initiate the trade';
   },
 });
