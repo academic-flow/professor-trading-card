@@ -1,0 +1,12 @@
+.bg-image {
+ /* background-image: url("images/main_page_background.jpg"); */
+  background-size: 100% 100%;
+  background-position: center;
+  padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .bg-image {
+    padding: 20px 0;
+  }
+}
