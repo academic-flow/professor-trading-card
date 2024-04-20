@@ -4,19 +4,6 @@ import { Collection, House, CardList, People, List, PeopleFill } from 'react-boo
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../layouts/App.jsx';
-import { Navigate, Route, Routes } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import Landing from '../pages/Landing';
-import NotFound from '../pages/NotFound';
-import ListFriends from '../pages/ListFriends';
-import SignOut from '../pages/SignOut';
-import CardItem from './CardItem';
-import ListCard from '../pages/ListCard';
-import SignIn from '../pages/SignIn';
-import SignUp from '../pages/SignUp';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
-import LoadingSpinner from './LoadingSpinner';
-import NotAuthorized from '../pages/NotAuthorized';
 
 const NavBar = () => (
   <div className="d-flex flex-column min-vh-100">
@@ -64,27 +51,12 @@ const NavBar = () => (
           </div>
         </div>
         <main className="col ps-md-2 pt-2">
-          <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none "><List className="fs-4" /> Menu</a>
-          <Routes>
-            <Route exact path="/" element={<Landing />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="/friendlist" element={<ProtectedRoute><ListFriends /></ProtectedRoute>} />
-            <Route path="/list" element={<ProtectedRoute><ListCard /></ProtectedRoute>} />
-            <Route path="/notauthorized" element={<NotAuthorized />} />
-            <Route path="/signout" element={<SignOut />} />
-            <Route path="/CardItem" element={<CardItem card={1} />} />
-            <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
-          </Routes>
+          <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none "><List className="fs-4" /></a>
         </main>
       </div>
     </div>
   </div>
 );
-const ProtectedRoute = ({ children }) => {
-  const isLogged = Meteor.userId() !== null;
-  return isLogged ? children : <Navigate to="/signin" />;
-};
+
 
 export default NavBar;
