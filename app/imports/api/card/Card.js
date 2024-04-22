@@ -15,11 +15,15 @@ class CardCollection {
       name: String,
       image: String,
       description: String,
-      owner: String,
+      owner: { type: String, optional: true },
       rarity: {
         type: String,
         allowedValues: ['Common', 'Uncommon', 'Mythic'],
         defaultValue: 'Common',
+      },
+      tradeAble: {
+        type: Boolean,
+        defaultValue: true,
       },
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

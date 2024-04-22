@@ -44,9 +44,9 @@ const ListFriends = () => {
     const username = currentUser ? currentUser.username : null;
     const receiverFriendItems = Friends.collection.find({ $and: [{ status: true }, { receiver: username }] }).fetch();
     const senderFriendItems = Friends.collection.find({ $and: [{ status: true }, { sender: username }] }).fetch();
-    const friendRequest = Friends.collection.find({ $and: [{ status: false }, { receiver: username }] }).fetch();
+    const friendRequestItems = Friends.collection.find({ $and: [{ status: false }, { receiver: username }] }).fetch();
     return {
-      friendRequest: friendRequest,
+      friendRequest: friendRequestItems,
       receiverFriends: receiverFriendItems,
       senderFriends: senderFriendItems,
       ready: rdy,
