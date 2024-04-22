@@ -7,6 +7,11 @@
 
 @media (max-width: 768px) {
   .bg-image {
-    padding: 20px 0;
+    height: 2000px; /* Adjust this value as needed to extend the page */
+    padding: 100px 0; /* Adjust padding to add space between sections */
   }
+}
+.scroll-container {
+  height: calc(100vh - 100px); /* Adjust height as needed */
+  overflow-y: auto;
 }

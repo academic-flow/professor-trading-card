@@ -9,8 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="181c6068-95ba-48ec-b7ff-c063932ee0b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.deploy/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/.deploy/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.deploy/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MainPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/stylesheets/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/stylesheets/MainPage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,30 +33,30 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2fDnuSAthpRSCxLpoF2McJLzLkR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "adam-10-implementing-home-page",
-    "last_opened_file_path": "/Users/adamwinfield-smith/Documents/GitHub/professor-trading-card/app/public/images",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;adam-10-implementing-home-page&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/adamwinfield-smith/Documents/GitHub/professor-trading-card/app/public/images&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/public/images" />
@@ -69,6 +72,8 @@
       <option name="presentableId" value="Default" />
       <updated>1713344740446</updated>
       <workItem from="1713344742091" duration="7443000" />
+      <workItem from="1713658744518" duration="1419000" />
+      <workItem from="1713673388618" duration="4152000" />
     </task>
     <servers />
   </component>
