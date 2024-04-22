@@ -113,9 +113,7 @@ Meteor.methods({
     return { cardOffer, cardWanted };
   },
   confirmTrade: function (trade) {
-    console.log(trade);
     const cardOfferCheck = Cards.collection.findOne({ $and: [{ _id: trade.card_offer }, { owner: trade.sender }] });
-    console.log(cardOfferCheck)
     const cardOwnerCheck = Cards.collection.findOne({ $and: [{ _id: trade.card_wanted }, { owner: trade.receiver }] });
     if (cardOfferCheck && cardOwnerCheck) {
       Cards.collection.update(
@@ -130,7 +128,7 @@ Meteor.methods({
       return 'success trade';
 
     }
-
+    Trades.collection.remove({ $and: [{ sender: trade.sender }, { receiver: trade.receiver }, { card_wanted: trade.card_wanted }, { card_offer: trade.card_offer }] });
     throw new Meteor.Error("can-not-trade', 'Cannot trade either you or your friend don't own the card anymore");
 
   },
