@@ -17,6 +17,7 @@ import SignUp from '../pages/SignUp';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import LoadingSpinner from './LoadingSpinner';
 import NotAuthorized from '../pages/NotAuthorized';
+import ViewCollection from '../pages/ViewCollection.jsx';
 import MainPage from '../pages/MainPage'
 
 const NavBar = () => (
@@ -77,6 +78,7 @@ const NavBar = () => (
             <Route path="/signout" element={<SignOut />} />
             <Route path="/CardItem" element={<CardItem card={1} />} />
             <Route path="/home" element={<ProtectedRoute><MainPage /></ProtectedRoute>} />
+            <Route path="/friendcollection/:friendUserName" element={<ProtectedRoute><ViewCollection /></ProtectedRoute>} />
           </Routes>
         </main>
       </div>
