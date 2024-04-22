@@ -20,7 +20,6 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ListFriends from '../pages/ListFriends';
 import CardItem from '../components/CardItem';
 import MainPage from '../pages/MainPage';
-import NavBarAdmin from '../components/NavBarAdmin';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {
@@ -38,7 +37,6 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/admin" element={<AdminProtectedRoute><NavBarAdmin /></AdminProtectedRoute>} />
           <Route path="/friendlist" element={<ProtectedRoute><ListFriends /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListCard /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
@@ -66,15 +64,15 @@ const ProtectedRoute = ({ children }) => {
  * Checks for Meteor login and admin role before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
  */
+
 const AdminProtectedRoute = ({ ready, children }) => {
   const isLogged = Meteor.userId() !== null;
-  if (!isLogged) {
+  if (isLogged && isAdmin) {
     return <Navigate to="/signin" />;
   }
   if (!ready) {
     return <LoadingSpinner />;
   }
-  const isAdmin = Roles.userIsInRole(Meteor.userId(), 'admin');
   return (isLogged && isAdmin) ? children : <Navigate to="/notauthorized" />;
 };
 
