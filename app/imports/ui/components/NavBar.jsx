@@ -17,6 +17,7 @@ import SignUp from '../pages/SignUp';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import LoadingSpinner from './LoadingSpinner';
 import NotAuthorized from '../pages/NotAuthorized';
+import TeacherHomePage from '../pages/TeacherHomePage';
 
 const NavBar = () => (
   <div className="d-flex flex-column min-vh-100">
@@ -28,31 +29,60 @@ const NavBar = () => (
               <a href="/signin" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                 <span className="collapse fs-5 d-none d-sm-inline">Menu</span>
               </a>
-              <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+              <ul
+                className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                id="menu"
+              >
                 <li className="nav-item">
-                  <a href="/home" className="nav-link px-0 align-middle">
+                  <a
+                    href="/home"
+                    className="nav-link px-0 align-middle"
+                  >
                     <House className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Home</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/list" className="nav-link px-0 align-middle">
+                  <a
+                    href="/list"
+                    className="nav-link px-0 align-middle"
+                  >
                     <Collection className="fs-4 text-white" /> <span className="ms-1 d-none d-sm-inline text-white">Collection</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/friendlist" className="nav-link px-0 align-middle">
+                  <a
+                    href="/friendlist"
+                    className="nav-link px-0 align-middle"
+                  >
                     <People className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Friends</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/CardItem" className="nav-link px-0 align-middle ">
+                  <a
+                    href="/CardItem"
+                    className="nav-link px-0 align-middle "
+                  >
                     <CardList className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">CardList</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    href="/TeacherHome"
+                    className="nav-link px-0 align-middle "
+                  >
+                    <CardList className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Teacher Home</span>
                   </a>
                 </li>
               </ul>
               <hr />
               <div className="dropdown pb-4">
-                <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <a
+                  href="#"
+                  className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                  id="dropdownUser1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" className="rounded-circle" />
                   <span className="d-none d-sm-inline mx-1">*username*</span>
                 </a>
@@ -71,6 +101,7 @@ const NavBar = () => (
             <Route path="/signup" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/friendlist" element={<ProtectedRoute><ListFriends /></ProtectedRoute>} />
+            <Route path="/TeacherHome" element={<ProtectedRoute><TeacherHomePage /></ProtectedRoute>} />
             <Route path="/list" element={<ProtectedRoute><ListCard /></ProtectedRoute>} />
             <Route path="/notauthorized" element={<NotAuthorized />} />
             <Route path="/signout" element={<SignOut />} />
