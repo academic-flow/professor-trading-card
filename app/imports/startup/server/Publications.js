@@ -2,12 +2,21 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Cards } from '../../api/card/Card';
 import { Friends } from '../../api/friend/Friend';
+import { Trades } from '../../api/trade/Trade';
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
 Meteor.publish(Cards.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Cards.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Trades.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Trades.collection.find({ receiver: username });
   }
   return this.ready();
 });
@@ -35,6 +44,14 @@ Meteor.publish(Friends.adminPublicationName, function () {
   }
   return this.ready();
 });
+
+Meteor.publish(Trades.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Trades.collection.find();
+  }
+  return this.ready();
+});
+
 
 // planning:roles publication
 // Recommended code to publish roles for each user.

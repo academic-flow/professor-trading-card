@@ -18,6 +18,8 @@ import ListStuffAdmin from '../pages/ListStuffAdmin';
 import LoadingSpinner from './LoadingSpinner';
 import NotAuthorized from '../pages/NotAuthorized';
 import TeacherHomePage from '../pages/TeacherHomePage';
+import ViewCollection from '../pages/ViewCollection.jsx';
+import MainPage from '../pages/MainPage';
 
 const NavBar = () => (
   <div className="d-flex flex-column min-vh-100">
@@ -106,7 +108,8 @@ const NavBar = () => (
             <Route path="/notauthorized" element={<NotAuthorized />} />
             <Route path="/signout" element={<SignOut />} />
             <Route path="/CardItem" element={<CardItem card={1} />} />
-            <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
+            <Route path="/home" element={<ProtectedRoute><MainPage /></ProtectedRoute>} />
+            <Route path="/friendcollection/:friendUserName" element={<ProtectedRoute><ViewCollection /></ProtectedRoute>} />
           </Routes>
         </main>
       </div>
