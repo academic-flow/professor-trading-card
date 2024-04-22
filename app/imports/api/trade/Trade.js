@@ -20,4 +20,9 @@ class TradeCollection {
   }
 }
 
+/**
+ * The singleton instance of the CardCollection.
+ * @type {TradeCollection}
+ */
+
 export const Trades = new TradeCollection();

@@ -5,7 +5,6 @@ import '/public/style/friendListSearchBar.css';
 import { Meteor } from 'meteor/meteor';
 import { Link } from 'react-router-dom';
 
-
 const ReceiverFriendCard = ({ user }) => {
   const removeFriend = () => {
     Meteor.call('removeFriend', { sender: user.receiver, receiver: user.sender }, (error, result) => {

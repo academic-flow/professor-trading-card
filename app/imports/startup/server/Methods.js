@@ -107,4 +107,35 @@ Meteor.methods({
     Trades.collection.insert({ sender: sender, receiver: receiver, card_wanted: selectedCardID, card_offer: myCardID });
     return 'initiate the trade';
   },
+  getCardDataForTradeComponent: function (card_wanted, card_offer) {
+    const cardOffer = Cards.collection.findOne({ _id: card_offer });
+    const cardWanted = Cards.collection.findOne({ _id: card_wanted });
+    return { cardOffer, cardWanted };
+  },
+  confirmTrade: function (trade) {
+    console.log(trade);
+    const cardOfferCheck = Cards.collection.findOne({ $and: [{ _id: trade.card_offer }, { owner: trade.sender }] });
+    console.log(cardOfferCheck)
+    const cardOwnerCheck = Cards.collection.findOne({ $and: [{ _id: trade.card_wanted }, { owner: trade.receiver }] });
+    if (cardOfferCheck && cardOwnerCheck) {
+      Cards.collection.update(
+        { $and: [{ _id: trade.card_offer }, { owner: trade.sender }] },
+        { $set: { owner: trade.receiver } },
+      );
+      Cards.collection.update(
+        { $and: [{ _id: trade.card_wanted }, { owner: trade.receiver }] },
+        { $set: { owner: trade.sender } },
+      );
+      Trades.collection.remove({ $and: [{ sender: trade.sender }, { receiver: trade.receiver }, { card_wanted: trade.card_wanted }, { card_offer: trade.card_offer }] });
+      return 'success trade';
+
+    }
+
+    throw new Meteor.Error("can-not-trade', 'Cannot trade either you or your friend don't own the card anymore");
+
+  },
+  denyTrade: function (trade) {
+    Trades.collection.remove({ $and: [{ sender: trade.sender }, { receiver: trade.receiver }, { card_wanted: trade.card_wanted }, { card_offer: trade.card_offer }] });
+    return 'success cancel trade';
+  },
 });

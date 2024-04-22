@@ -25,6 +25,12 @@
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
+
+  "monti": {
+    "appId": "CGGWRr2tobFksShEz",
+    "appSecret": "53f45e46-df4e-4d1a-a93f-602cb6223fa1"
+  },
+
   "keyData": [
     { "key": "1"},
     { "key": "2"},
@@ -45,8 +51,6 @@
     {"sender": "test2@foo.com", "receiver": "john@foo.com", "status": "False"},
     {"sender": "john@foo.com", "receiver": "admin2@foo.com", "status": "True"},
     {"sender": "john@foo.com", "receiver": "admin3@foo.com", "status": "True"}
-
-
 
   ]
 }
