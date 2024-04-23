@@ -20,8 +20,9 @@ import NotAuthorized from '../pages/NotAuthorized';
 import TeacherHomePage from '../pages/TeacherHomePage';
 import ViewCollection from '../pages/ViewCollection.jsx';
 import MainPage from '../pages/MainPage';
+import TeacherAddCard from '../pages/TeacherAddCard.jsx';
 
-const NavBar = () => (
+const NavBar = ({ready}) => (
   <div className="d-flex flex-column min-vh-100">
     <div className="container-fluid">
       <div className="row flex-nowrap">
@@ -110,6 +111,7 @@ const NavBar = () => (
             <Route path="/CardItem" element={<CardItem card={1} />} />
             <Route path="/home" element={<ProtectedRoute><MainPage /></ProtectedRoute>} />
             <Route path="/friendcollection/:friendUserName" element={<ProtectedRoute><ViewCollection /></ProtectedRoute>} />
+            <Route path="/add-card" element={<AdminProtectedRoute ready={ready}><TeacherAddCard /></AdminProtectedRoute>} />
           </Routes>
         </main>
       </div>
@@ -119,6 +121,19 @@ const NavBar = () => (
 const ProtectedRoute = ({ children }) => {
   const isLogged = Meteor.userId() !== null;
   return isLogged ? children : <Navigate to="/signin" />;
+};
+
+const AdminProtectedRoute = ({ ready, children }) => {
+  
+  const isLogged = Meteor.userId() !== null;
+  if (!isLogged) {
+    return <Navigate to="/signin" />;
+  }
+  if (!ready) {
+    return <LoadingSpinner />;
+  }
+  const isAdmin = Roles.userIsInRole(Meteor.userId(), 'admin');
+  return (isLogged && isAdmin) ? children : <Navigate to="/notauthorized" />;
 };
 
 export default NavBar;
