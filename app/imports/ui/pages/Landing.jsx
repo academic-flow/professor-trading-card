@@ -1,36 +1,32 @@
 import React from 'react';
-import { Col, Container, Row, Form, Button, FloatingLabel } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Col, Container, Row } from 'react-bootstrap';
+import Logo from '../components/landingLogo';
 
 const Landing = () => (
-  <Container id="landing-page" fluid className="py-3">
-    <Row className="align-middle text-center">
-      <Col />
-      <Col xs={8} className="d-flex flex-column justify-content-center">
-        <h1>ProfessorTCG</h1>
-      </Col>
-    </Row>
+    <Container id="landing-page" fluid className="py-3">
 
-    <Row className="py-5">
-      <Col md={{ span: 4, offset: 6 }}>
-        <h2 className="text-center py-2">Login to your account</h2>
-        <Form>
-          <FloatingLabel controlId="floatingInput" label="Email address" className="mb-3">
-            <Form.Control type="email" placeholder="name@example.com" />
-          </FloatingLabel>
+      <Row className="justify-content-center">
+        <Col xs={6} className="text-center">
+          <Logo />
+        </Col>
+      </Row>
 
-          <FloatingLabel controlId="floatingPassword" label="Password" className="mb-3">
-            <Form.Control type="password" placeholder="Password" />
-          </FloatingLabel>
 
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-          <Link to="/signup" className="px-5">Click here to Register</Link>
-        </Form>
-      </Col>
-    </Row>
-  </Container>
+      <Row className="justify-content-center mt-5">
+        <Col xs={12} className="text-center">
+          <h1 className="display-4">Welcome to ProfTCG!</h1>
+        </Col>
+      </Row>
+<br />
+      <br />
+      <Row className="justify-content-center mt-5">
+        <Col xs={12} md={8} lg={6} className="text-center">
+          <p className="lead">
+            Open packs of cards containing professors here at UH Manoa, trade with friends, and get to know your professors better!
+          </p>
+        </Col>
+      </Row>
+    </Container>
 );
 
 export default Landing;
