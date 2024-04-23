@@ -17,10 +17,9 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
-import ListFriends from '../pages/ListFriends';
-import CardItem from '../components/CardItem';
 import MainPage from '../pages/MainPage';
-import NavBarAdmin from '../components/NavBarAdmin';
+import ListFriends from '../pages/ListFriends';
+import ViewCollection from '../pages/ViewCollection';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {
@@ -32,19 +31,20 @@ const App = () => {
   return (
     <Router>
       <div className="d-flex">
+
         <NavBar />
         <Routes>
+          <Route path="/ViewCollection" element={<ProtectedRoute><ViewCollection /></ProtectedRoute>} />
           <Route exact path="/" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/admin" element={<AdminProtectedRoute><NavBarAdmin /></AdminProtectedRoute>} />
           <Route path="/friendlist" element={<ProtectedRoute><ListFriends /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListCard /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/signout" element={<SignOut />} />
-          <Route path="/CardItem" element={<CardItem card={1} />} />
-          <Route path="/mainpage" element={<ProtectedRoute><MainPage /></ProtectedRoute>} />
+          <Route path="/home" element={<ProtectedRoute><MainPage /></ProtectedRoute>} />
+          <Route path="/friendcollection/:friendUserName" element={<ProtectedRoute><ViewCollection /></ProtectedRoute>} />
         </Routes>
       </div>
     </Router>
