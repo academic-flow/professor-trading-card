@@ -28,7 +28,7 @@ const ReceiverFriendCard = ({ user }) => {
               <Card.Title>{user.sender}</Card.Title>
               <Card.Subtitle>email@address.com</Card.Subtitle>
               <Row className="py-2" />
-              <Link to={`/friendcollection/${user.sender}`}>View Collection</Link>
+              <Link id="view-collection-button" to={`/friendcollection/${user.sender}`}>View Collection</Link>
             </Col>
 
             <Col md={3} className="d-flex align-items-center justify-content-center">
