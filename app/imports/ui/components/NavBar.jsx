@@ -36,7 +36,7 @@ const NavBar = ({ready}) => (
                 className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
                 id="menu"
               >
-                <li className="nav-item">
+                <li className="nav-item" id="navbar-home">
                   <a
                     href="/home"
                     className="nav-link px-0 align-middle"
@@ -44,7 +44,7 @@ const NavBar = ({ready}) => (
                     <House className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Home</span>
                   </a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" id="navbar-collection">
                   <a
                     href="/list"
                     className="nav-link px-0 align-middle"
@@ -52,7 +52,7 @@ const NavBar = ({ready}) => (
                     <Collection className="fs-4 text-white" /> <span className="ms-1 d-none d-sm-inline text-white">Collection</span>
                   </a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" id="navbar-friend">
                   <a
                     href="/friendlist"
                     className="nav-link px-0 align-middle"
@@ -97,7 +97,7 @@ const NavBar = ({ready}) => (
           </div>
         </div>
         <main className="col ps-md-2 pt-2">
-          <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none "><List className="fs-4" /> Menu</a>
+          <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none " id="navbar"><List className="fs-4" /> Menu</a>
           <Routes>
             <Route exact path="/" element={<Landing />} />
             <Route path="/signin" element={<SignIn />} />
