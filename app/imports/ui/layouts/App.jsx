@@ -35,8 +35,6 @@ const App = () => {
     <Router>
       <div className="d-flex ">
         <NavBar ready={ready}/>
-
-
         <Routes>
           <Route exact path="/" element={<Landing/>}/>
             <Route path="/signin" element={<SignIn/>}/>
