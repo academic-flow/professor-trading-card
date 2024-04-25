@@ -33,31 +33,31 @@ const App = () => {
   });
   return (
     <Router>
-      <div className="d-flex">
-
+      <div className="d-flex ">
         <NavBar ready={ready}/>
+
+
         <Routes>
           <Route exact path="/" element={<Landing/>}/>
-          <Route path="/signin" element={<SignIn/>}/>
-          <Route path="/signup" element={<SignUp/>}/>
-          <Route path="*" element={<NotFound/>}/>
-          <Route path="/home" element={<ProtectedRoute><MainPage/></ProtectedRoute>}/>
-          <Route path="/friendlist" element={<ProtectedRoute><ListFriends/></ProtectedRoute>}/>
-          <Route path="/TeacherHome" element={<ProtectedRoute><TeacherHomePage/></ProtectedRoute>}/>
-          <Route path="/list" element={<ProtectedRoute><ListCard/></ProtectedRoute>}/>
-          <Route path="/notauthorized" element={<NotAuthorized/>}/>
-          <Route path="/signout" element={<SignOut/>}/>
-          <Route path="/CardItem" element={<CardItem card={1}/>}/>
-          <Route path="/friendcollection/:friendUserName" element={<ProtectedRoute><ViewCollection/></ProtectedRoute>}/>
-          <Route path="/add-card" element={<AdminProtectedRoute ready={ready}><TeacherAddCard/></AdminProtectedRoute>}/>
-        </Routes>
-      </div>
+            <Route path="/signin" element={<SignIn/>}/>
+            <Route path="/signup" element={<SignUp/>}/>
+            <Route path="/home" element={<ProtectedRoute><MainPage/></ProtectedRoute>}/>
+            <Route path="/friendlist" element={<ProtectedRoute><ListFriends/></ProtectedRoute>}/>
+            <Route path="/TeacherHome" element={<ProtectedRoute><TeacherHomePage/></ProtectedRoute>}/>
+            <Route path="/list" element={<ProtectedRoute><ListCard/></ProtectedRoute>}/>
+            <Route path="/notauthorized" element={<NotAuthorized/>}/>
+            <Route path="/signout" element={<SignOut/>}/>
+            <Route path="/CardItem" element={<CardItem card={1}/>}/>
+            <Route path="/friendcollection/:friendUserName" element={<ProtectedRoute><ViewCollection/></ProtectedRoute>}/>
+            <Route path="/add-card" element={<AdminProtectedRoute ready={ready}><TeacherAddCard/></AdminProtectedRoute>}/>
+          </Routes>
+        </div>
     </Router>
-  );
+);
 };
 
 /*
- * ProtectedRoute (see React Router v6 sample)
+* ProtectedRoute (see React Router v6 sample)
  * Checks for Meteor login before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
  */
