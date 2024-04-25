@@ -36,15 +36,12 @@ const App = () => {
       <div className="d-flex">
 
         <NavBar ready={ready}/>
-        <div className="d-incline">
-          <Routes>
-            <Route path="/home" element={<ProtectedRoute><MainPage/></ProtectedRoute>}/>
-          </Routes>
-        </div>
         <Routes>
           <Route exact path="/" element={<Landing/>}/>
           <Route path="/signin" element={<SignIn/>}/>
           <Route path="/signup" element={<SignUp/>}/>
+          <Route path="*" element={<NotFound/>}/>
+          <Route path="/home" element={<ProtectedRoute><MainPage/></ProtectedRoute>}/>
           <Route path="/friendlist" element={<ProtectedRoute><ListFriends/></ProtectedRoute>}/>
           <Route path="/TeacherHome" element={<ProtectedRoute><TeacherHomePage/></ProtectedRoute>}/>
           <Route path="/list" element={<ProtectedRoute><ListCard/></ProtectedRoute>}/>

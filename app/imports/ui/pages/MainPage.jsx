@@ -24,7 +24,7 @@ const MainPage = () => {
 
   return (ready ? (
     <>
-
+    <div className="d-incline">
       <Container fluid>
         <Row>
           <Col />
@@ -51,6 +51,7 @@ const MainPage = () => {
         {requests.map((request) => <TradeItem key={request._id} trade={request} />)}
 
       </Container>
+      </div>
     </>
   ) : <LoadingSpinner />
   );
