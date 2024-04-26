@@ -3,137 +3,119 @@ import '../../../public/style/navbar.css';
 import { Collection, House, CardList, People, List, PeopleFill } from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Navigate } from 'react-router-dom';
 import '../layouts/App.jsx';
-import { Navigate, Route, Routes } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import Landing from '../pages/Landing';
-import NotFound from '../pages/NotFound';
-import ListFriends from '../pages/ListFriends';
-import SignOut from '../pages/SignOut';
-import CardItem from './CardItem';
-import ListCard from '../pages/ListCard';
-import SignIn from '../pages/SignIn';
-import SignUp from '../pages/SignUp';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
-import LoadingSpinner from './LoadingSpinner';
-import NotAuthorized from '../pages/NotAuthorized';
-import TeacherHomePage from '../pages/TeacherHomePage';
-import ViewCollection from '../pages/ViewCollection.jsx';
-import MainPage from '../pages/MainPage';
-import TeacherAddCard from '../pages/TeacherAddCard.jsx';
-
-const NavBar = ({ready}) => (
-  <div className="d-flex flex-column min-vh-100">
-    <div className="container-fluid">
-      <div className="row flex-nowrap">
-        <div className="col-auto px-0">
-          <div id="sidebar" className="collapse collapse-horizontal col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-danger">
-            <div id="sidebar-nav" className="d-flex flex-column align-items-center align-items-sm-start px-1 pt-2 text-white min-vh-100">
-              <a href="/signin" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <span className="collapse fs-5 d-none d-sm-inline">Menu</span>
-              </a>
-              <ul
-                className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-                id="menu"
-              >
-                <li className="nav-item" id="navbar-home">
-                  <a
-                    href="/home"
-                    className="nav-link px-0 align-middle"
-                  >
-                    <House className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Home</span>
+import { Redirect } from 'react-router-dom';
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
+import { NavLink } from 'react-router-dom';
+import { Roles } from 'meteor/alanning:roles';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+const NavBar = ({ready}) => {
+// useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const { currentUser, isAdmin } = useTracker(() => ({
+    currentUser: Meteor.user() ? Meteor.user().username : '',
+    isAdmin: Roles.userIsInRole(Meteor.userId(), 'admin'),
+  }), []);
+  // Check if the current user is an admin
+  // Render the appropriate navbar based on the user's role
+  if (!currentUser) {
+    return (
+    <div></div>
+    )
+  } else if (isAdmin) {
+    return (
+      <div className="d-flex flex-column min-vh-100">
+        <div className="container-fluid">
+          <div className="row flex-nowrap">
+            <div className="col-auto px-0">
+              <div id="sidebar" className="collapse collapse-horizontal col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-danger">
+                <div id="sidebar-nav" className="d-flex flex-column align-items-center align-items-sm-start px-1 pt-2 text-white min-vh-100">
+                  <a href="/TeacherHome" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span className="collapse fs-5 d-none d-sm-inline">Menu</span>
                   </a>
-                </li>
-                <li className="nav-item" id="navbar-collection">
-                  <a
-                    href="/list"
-                    className="nav-link px-0 align-middle"
-                  >
-                    <Collection className="fs-4 text-white" /> <span className="ms-1 d-none d-sm-inline text-white">Collection</span>
-                  </a>
-                </li>
-                <li className="nav-item" id="navbar-friend">
-                  <a
-                    href="/friendlist"
-                    className="nav-link px-0 align-middle"
-                  >
-                    <People className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Friends</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    href="/CardItem"
-                    className="nav-link px-0 align-middle "
-                  >
-                    <CardList className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">CardList</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    href="/TeacherHome"
-                    className="nav-link px-0 align-middle "
-                  >
-                    <CardList className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Teacher Home</span>
-                  </a>
-                </li>
-              </ul>
-              <hr />
-              <div className="dropdown pb-4">
-                <a
-                  href="#"
-                  className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                  id="dropdownUser1"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" className="rounded-circle" />
-                  <span className="d-none d-sm-inline mx-1">*username*</span>
-                </a>
-                <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                  <li><a className="dropdown-item" href="/signout">Sign out</a></li>
-                </ul>
+                  <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li className="nav-item">
+                      <a href="/TeacherHome" className="nav-link px-0 align-middle">
+                        <House className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">Home</span>
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="/add-card" className="nav-link px-0 align-middle ">
+                        <CardList className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">TeacherAddCard</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <hr/>
+                  <div className="dropdown pb-4">
+                    <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" className="rounded-circle"/>
+                      <span className="d-none d-sm-inline mx-1">{currentUser}</span>
+                    </a>
+                    <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                      <li><a className="dropdown-item" href="/signout">Sign out</a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
+            <main className="col ps-md-2 pt-2">
+              <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none "><List className="fs-4"/></a>
+            </main>
           </div>
         </div>
-        <main className="col ps-md-2 pt-2">
-          <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none " id="navbar"><List className="fs-4" /> Menu</a>
-          <Routes>
-            <Route exact path="/" element={<Landing />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="/friendlist" element={<ProtectedRoute><ListFriends /></ProtectedRoute>} />
-            <Route path="/TeacherHome" element={<ProtectedRoute><TeacherHomePage /></ProtectedRoute>} />
-            <Route path="/list" element={<ProtectedRoute><ListCard /></ProtectedRoute>} />
-            <Route path="/notauthorized" element={<NotAuthorized />} />
-            <Route path="/signout" element={<SignOut />} />
-            <Route path="/CardItem" element={<CardItem card={1} />} />
-            <Route path="/home" element={<ProtectedRoute><MainPage /></ProtectedRoute>} />
-            <Route path="/friendcollection/:friendUserName" element={<ProtectedRoute><ViewCollection /></ProtectedRoute>} />
-            <Route path="/add-card" element={<AdminProtectedRoute ready={ready}><TeacherAddCard /></AdminProtectedRoute>} />
-          </Routes>
-        </main>
       </div>
-    </div>
-  </div>
-);
-const ProtectedRoute = ({ children }) => {
-  const isLogged = Meteor.userId() !== null;
-  return isLogged ? children : <Navigate to="/signin" />;
-};
-
-const AdminProtectedRoute = ({ ready, children }) => {
-  
-  const isLogged = Meteor.userId() !== null;
-  if (!isLogged) {
-    return <Navigate to="/signin" />;
+    )
+  } else {
+    return (
+      <div className="d-flex flex-column min-vh-100">
+        <div className="container-fluid">
+          <div className="row flex-nowrap">
+            <div className="col-auto px-0">
+              <div id="sidebar" className="collapse collapse-horizontal col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-danger">
+                <div id="sidebar-nav" className="d-flex flex-column align-items-center align-items-sm-start px-1 pt-2 text-white min-vh-100">
+                  <a href="/home" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span className="collapse fs-5 d-none d-sm-inline">Menu</span>
+                  </a>
+                  <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li className="nav-item">
+                      <a href="/home" className="nav-link px-0 align-middle">
+                        <House className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">Home</span>
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="/list" className="nav-link px-0 align-middle">
+                        <Collection className="fs-4 text-white"/> <span className="ms-1 d-none d-sm-inline text-white">Collection</span>
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a href="/friendlist" className="nav-link px-0 align-middle">
+                        <People className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">Friends</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <hr/>
+                  <div className="dropdown pb-4">
+                    <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" className="rounded-circle"/>
+                      <span className="d-none d-sm-inline mx-1">{currentUser}</span>
+                    </a>
+                    <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                      <li><a className="dropdown-item" href="/signout">Sign out</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <main className="col ps-md-2 pt-2">
+              <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none "><List className="fs-4"/></a>
+            </main>
+          </div>
+        </div>
+      </div>
+    )
   }
-  if (!ready) {
-    return <LoadingSpinner />;
-  }
-  const isAdmin = Roles.userIsInRole(Meteor.userId(), 'admin');
-  return (isLogged && isAdmin) ? children : <Navigate to="/notauthorized" />;
 };
 
 export default NavBar;
