@@ -94,11 +94,6 @@ const NavBar = ({ready}) => {
                         <People className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">Friends</span>
                       </a>
                     </li>
-                    <li className="nav-item">
-                      <a href="/CardItem" className="nav-link px-0 align-middle ">
-                        <CardList className="fs-4 text-white"/><span className="ms-1 d-none d-sm-inline text-white">CardItem</span>
-                      </a>
-                    </li>
                   </ul>
                   <hr/>
                   <div className="dropdown pb-4">
