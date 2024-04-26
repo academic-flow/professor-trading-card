@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Logo from '../components/landingLogo';
 
 const Landing = () => (
@@ -26,7 +27,13 @@ const Landing = () => (
           </p>
         </Col>
       </Row>
-    </Container>
+
+<Row className="justify-content-center mt-5">
+  <Col xs={12} md={8} lg={6} className="text-center">
+    <Link to="/SignIn" className="btn btn-secondary ">Sign In or register here </Link>
+  </Col>
+</Row>
+</Container>
 );
 
 export default Landing;
