@@ -67,7 +67,7 @@ const ViewCollection = () => {
             <div className="pt-2" key={card._id}>
               <CardItem card={card} />
             </div>
-            <Button onClick={() => handleTradeButtonClick(card)}>Trade</Button>
+            <Button id="trade" onClick={() => handleTradeButtonClick(card)}>Trade</Button>
           </>
         ))}
       </div>

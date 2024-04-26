@@ -9,6 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="181c6068-95ba-48ec-b7ff-c063932ee0b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/stylesheets/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/stylesheets/MainPage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +45,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;adam-60-redo-landing-page&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sean-38-create-teacher-nav-bar&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/adamwinfield-smith/Documents/GitHub/professor-trading-card/app/public/images&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -58,6 +63,21 @@
       <recent name="$PROJECT_DIR$/app/.deploy" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="professor-trading-card" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="professor-trading-card" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,6 +89,9 @@
       <workItem from="1713344742091" duration="7443000" />
       <workItem from="1713769650809" duration="4134000" />
       <workItem from="1714074353504" duration="414000" />
+      <workItem from="1714072443476" duration="3827000" />
+      <workItem from="1714076367352" duration="2500000" />
+      <workItem from="1714093270228" duration="1854000" />
     </task>
     <servers />
   </component>

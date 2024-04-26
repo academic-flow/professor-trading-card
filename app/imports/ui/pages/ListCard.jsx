@@ -4,6 +4,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { Cards } from '../../api/card/Card';
 import CardItem from '../components/CardItem';
 import LoadingSpinner from '../components/LoadingSpinner';
+import navbar from '../../../public/style/navbar.css';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const ListCard = () => {
@@ -23,6 +24,7 @@ const ListCard = () => {
     };
   }, []);
   return (ready ? (
+    <div class="container">
     <div className="d-flex flex-row justify-content-around">
       <div className="d-flex justify-content-center flex-column text-center align-items-center" id="rightside" style={{ flex: 2 }}>
         <h1>ProfTCG</h1>
@@ -34,6 +36,7 @@ const ListCard = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   ) : <LoadingSpinner />);
 };
