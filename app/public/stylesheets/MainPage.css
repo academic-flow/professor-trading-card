@@ -17,3 +17,7 @@
   overflow-y: auto;
 }
 
+.page-padding {
+  padding-bottom: 20px; /* Adjust this value as needed */
+}
+
