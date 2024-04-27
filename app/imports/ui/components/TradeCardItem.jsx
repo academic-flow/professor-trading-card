@@ -7,39 +7,39 @@ import Card from 'react-bootstrap/Card';
 const TradeCardItem = ({ card }) => {
   const getTextColor = (rarity) => {
     switch (rarity) {
-      case 'Common':
-        return '#A9A9A9';
-      case 'Uncommon':
-        return '#008000';
-      case 'Mythic':
-        return '#FF4500';
-      default:
-        return 'none';
+    case 'Common':
+      return '#A9A9A9';
+    case 'Uncommon':
+      return '#008000';
+    case 'Mythic':
+      return '#FF4500';
+    default:
+      return 'none';
     }
   };
 
   return (
-      <div className="col" style={{ marginBottom: '20px' }}>
-        <Card style={{ width: '18rem' }}>
-          <Card.Title>{card.name}</Card.Title>
-          <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
-            <Card.Img
-                variant="top"
-                src={card.image}
-                height={200}
-                style={{ objectFit: 'contain' }}
-            />
-          </div>
-          <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '100px' }}>
-            <Card.Text>
-              Rarity: <span style={{ color: getTextColor(card.rarity) }}>{card.rarity}</span>
-            </Card.Text>
-          </Card.Body>
-          <Link to={`/edit/${card._id}`}>
-            <Button variant="primary">Details</Button>
-          </Link>
-        </Card>
-      </div>
+    <div className="col" style={{ marginBottom: '20px' }}>
+      <Card style={{ width: '18rem' }}>
+        <Card.Title>{card.name}</Card.Title>
+        <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
+          <Card.Img
+            variant="top"
+            src={card.image}
+            height={200}
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
+        <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '100px' }}>
+          <Card.Text>
+            Rarity: <span style={{ color: getTextColor(card.rarity) }}>{card.rarity}</span>
+          </Card.Text>
+        </Card.Body>
+        <Link to={`/edit/${card._id}`}>
+          <Button variant="primary">Details</Button>
+        </Link>
+      </Card>
+    </div>
   );
 };
 
