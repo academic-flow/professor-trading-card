@@ -7,17 +7,21 @@
 
 @media (max-width: 768px) {
   .bg-image {
-    height: 2000px; /* Adjust this value as needed to extend the page */
-    padding: 100px 0; /* Adjust padding to add space between sections */
+    height: 2000px;
+    padding: 100px 0;
   }
 
 }
 .scroll-container {
-  height: calc(100vh - 100px); /* Adjust height as needed */
+  height: calc(100vh - 100px);
   overflow-y: auto;
 }
 
 .page-padding {
-  padding-bottom: 20px; /* Adjust this value as needed */
+  padding-bottom: 20px;
+}
+
+.mainLogo {
+  width: 20px;
 }
 
