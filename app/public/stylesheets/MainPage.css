@@ -7,6 +7,21 @@
 
 @media (max-width: 768px) {
   .bg-image {
-    padding: 20px 0;
+    height: 2000px;
+    padding: 100px 0;
   }
+
 }
+.scroll-container {
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.page-padding {
+  padding-bottom: 20px;
+}
+
+.mainLogo {
+  width: 20px;
+}
+

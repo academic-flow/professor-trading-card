@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Button, Modal } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { useTracker } from 'meteor/react-meteor-data';
 
 import { Meteor } from 'meteor/meteor';
@@ -14,6 +14,7 @@ const ViewCollection = () => {
   const [collection, setCollection] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
+  console.log(friendUserName)
 
   const { ready, myCards, currentUserName } = useTracker(() => {
     const subscription = Meteor.subscribe(Cards.userPublicationName);
