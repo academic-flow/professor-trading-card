@@ -57,7 +57,7 @@ const TradeItem = ({ trade }) => {
         <LoadingSpinner />
       ) : (
         <div className="d-flex tradeContainer flex-column">
-          <h4>{trade.sender} want to trade with you</h4>
+          <h4>{trade.sender} would like to trade with you</h4>
           <div className="d-flex flex-row">
             <div className="cardWanted d-flex flex-column">
               <Card style={{ width: '18rem' }}>
