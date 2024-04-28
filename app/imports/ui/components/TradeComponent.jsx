@@ -61,7 +61,7 @@ const TradeItem = ({ trade }) => {
           <div className="d-flex flex-row">
             <div className="cardWanted d-flex flex-column">
               <Card style={{ width: '18rem' }}>
-                <Card.Title>{cardData.cardWanted.name}</Card.Title>
+                <Card.Title>{cardData.cardWanted.name} card wanted</Card.Title>
                 <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
                   <Card.Img
                     variant="top"
@@ -72,7 +72,7 @@ const TradeItem = ({ trade }) => {
                 </div>
                 <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '100px' }}>
                   <Card.Text>
-                    Rarity: <span style={{ color: getTextColor(cardData.cardWanted.rarity) }}>{cardData.cardOffer.rarity}</span>
+                    Rarity: <span style={{ color: getTextColor(cardData.cardWanted.rarity) }}>{cardData.cardWanted.rarity}</span>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -80,7 +80,7 @@ const TradeItem = ({ trade }) => {
             <div className="cardOffer d-flex">
 
               <Card style={{ width: '18rem' }}>
-                <Card.Title>{cardData.cardOffer.name}</Card.Title>
+                <Card.Title>{cardData.cardOffer.name} card offer</Card.Title>
                 <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
                   <Card.Img
                     variant="top"

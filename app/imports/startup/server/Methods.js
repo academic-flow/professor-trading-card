@@ -136,4 +136,35 @@ Meteor.methods({
     Trades.collection.remove({ $and: [{ sender: trade.sender }, { receiver: trade.receiver }, { card_wanted: trade.card_wanted }, { card_offer: trade.card_offer }] });
     return 'success cancel trade';
   },
+  getRandomCards: function (username) {
+    const user = Meteor.users.findOne({ username: username });
+    if (user.availablePackage > 0) {
+      const numberOfCards = 3;
+      const randomCards = Cards.collection.find({ owner: 'None' }).fetch();
+      if (randomCards.length < numberOfCards) {
+        throw new Meteor.Error("insuffiecient-cards', 'Insufficient cards in database please contact UH manoa to resolve this issue");
+
+      } else {
+
+        const randomIndex = Math.floor(Math.random() * (randomCards.length - numberOfCards + 1));
+        const selectedCards = randomCards.slice(randomIndex, randomIndex + numberOfCards);
+
+        selectedCards.forEach(card => {
+          Cards.collection.update(
+            { _id: card._id },
+            { $set: { owner: username } },
+          );
+        });
+        Meteor.users.update(
+          { _id: user._id },
+          { $inc: { availablePackage: -1 } },
+        );
+        return 'Check your collection for all the new cards';
+
+      }
+    } else {
+      throw new Meteor.Error("you-dont-have-any-package', 'You don't have any package to open");
+
+    }
+  },
 });
