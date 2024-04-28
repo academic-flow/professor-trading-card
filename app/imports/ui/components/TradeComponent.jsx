@@ -12,14 +12,14 @@ const TradeItem = ({ trade }) => {
   const [loading, setLoading] = useState(true);
   const getTextColor = (rarity) => {
     switch (rarity) {
-    case 'Common':
-      return '#A9A9A9';
-    case 'Uncommon':
-      return '#008000';
-    case 'Mythic':
-      return '#FF4500';
-    default:
-      return 'none';
+      case 'Common':
+        return '#A9A9A9';
+      case 'Uncommon':
+        return '#008000';
+      case 'Mythic':
+        return '#FF4500';
+      default:
+        return 'none';
     }
   };
   const confirmTrade = () => {
@@ -52,60 +52,60 @@ const TradeItem = ({ trade }) => {
   }, [trade.card_wanted, trade.card_offer]);
 
   return (
-    <div className="d-flex">
-      {loading ? (
-        <LoadingSpinner />
-      ) : (
-        <div className="d-flex tradeContainer flex-column">
-          <h4>{trade.sender} would like to trade with you</h4>
-          <div className="d-flex flex-row">
-            <div className="cardWanted d-flex flex-column">
-              <Card style={{ width: '18rem' }}>
-                <Card.Title>{cardData.cardWanted.name}</Card.Title>
-                <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
-                  <Card.Img
-                    variant="top"
-                    src={cardData.cardWanted.image}
-                    height={200}
-                    style={{ objectFit: 'contain' }}
-                  />
+      <div className="d-flex">
+        {loading ? (
+            <LoadingSpinner />
+        ) : (
+            <div className="d-flex tradeContainer flex-column">
+              <h4>{trade.sender} would like to trade with you: </h4>
+              <div className="d-flex flex-row">
+                <div className="cardWanted d-flex flex-column">
+                  <Card style={{ width: '18rem' }}>
+                    <Card.Title> Card wanted: </Card.Title>
+                    <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
+                      <Card.Img
+                          variant="top"
+                          src={cardData.cardWanted.image}
+                          height={200}
+                          style={{ objectFit: 'contain' }}
+                      />
+                    </div>
+                    <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '100px' }}>
+                      <Card.Text>
+                        Rarity: <span style={{ color: getTextColor(cardData.cardWanted.rarity) }}>{cardData.cardWanted.rarity}</span>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
                 </div>
-                <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '100px' }}>
-                  <Card.Text>
-                    Rarity: <span style={{ color: getTextColor(cardData.cardWanted.rarity) }}>{cardData.cardOffer.rarity}</span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-            <div className="cardOffer d-flex">
+                <div className="cardOffer d-flex">
 
-              <Card style={{ width: '18rem' }}>
-                <Card.Title>{cardData.cardOffer.name}</Card.Title>
-                <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
-                  <Card.Img
-                    variant="top"
-                    src={cardData.cardOffer.image}
-                    height={200}
-                    style={{ objectFit: 'contain' }}
-                  />
+                  <Card style={{ width: '18rem' }}>
+                    <Card.Title> Card offered: </Card.Title>
+                    <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
+                      <Card.Img
+                          variant="top"
+                          src={cardData.cardOffer.image}
+                          height={200}
+                          style={{ objectFit: 'contain' }}
+                      />
+                    </div>
+                    <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '100px' }}>
+                      <Card.Text>
+                        Rarity: <span style={{ color: getTextColor(cardData.cardOffer.rarity) }}>{cardData.cardOffer.rarity}</span>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
                 </div>
-                <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '100px' }}>
-                  <Card.Text>
-                    Rarity: <span style={{ color: getTextColor(cardData.cardOffer.rarity) }}>{cardData.cardOffer.rarity}</span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+              </div>
+              <Button variant="primary" className="pb-2" onClick={confirmTrade}>
+                Accept
+              </Button>
+              <Button variant="primary" className="pb-2" onClick={denyTrade}>
+                Deny
+              </Button>
             </div>
-          </div>
-          <Button variant="primary" className="pb-2" onClick={confirmTrade}>
-            Accept
-          </Button>
-          <Button variant="primary" className="pb-2" onClick={denyTrade}>
-            Deny
-          </Button>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
   );
 };
 
