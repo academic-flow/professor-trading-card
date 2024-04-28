@@ -32,11 +32,11 @@ const App = () => {
     };
   });
   return (
-    <Router>
-      <div className="d-flex ">
-        <NavBar ready={ready}/>
-        <Routes>
-          <Route exact path="/" element={<Landing/>}/>
+      <Router>
+        <div className="d-flex ">
+          <NavBar ready={ready}/>
+          <Routes>
+            <Route exact path="/" element={<Landing/>}/>
             <Route path="/signin" element={<SignIn/>}/>
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/home" element={<ProtectedRoute><MainPage/></ProtectedRoute>}/>
@@ -50,7 +50,7 @@ const App = () => {
             <Route path="/add-card" element={<AdminProtectedRoute ready={ready}><TeacherAddCard/></AdminProtectedRoute>}/>
           </Routes>
         </div>
-    </Router>
+      </Router>
 );
 };
 
