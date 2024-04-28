@@ -5,6 +5,7 @@ import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { useTracker } from 'meteor/react-meteor-data';
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -18,6 +19,12 @@ const SignIn = () => {
     password: String,
   });
   const bridge = new SimpleSchema2Bridge(schema);
+
+
+  const { currentUser, isAdmin } = useTracker(() => ({
+    currentUser: Meteor.user() ? Meteor.user().username : '',
+    isAdmin: Roles.userIsInRole(Meteor.userId(), 'admin'),
+  }), []);
 
   // Handle Signin submission using Meteor's account mechanism.
   const submit = (doc) => {
@@ -37,7 +44,11 @@ const SignIn = () => {
   // console.log('render', error, redirect);
   // if correct authentication, redirect to page instead of login screen
   if (redirect) {
-    return (<Navigate to="/" />);
+    if (isAdmin) {
+      return (<Navigate to="/TeacherHome" />);
+    } else {
+      return (<Navigate to="/home" />);
+    }
   }
   // Otherwise return the Login form.
   return (
