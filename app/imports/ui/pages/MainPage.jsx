@@ -54,8 +54,6 @@ const MainPage = () => {
                       Available Packages To Open:
                     </motion.h2>
 
-                    < br />
-
                     <motion.p
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -68,9 +66,8 @@ const MainPage = () => {
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 2 }}
-                        style={{ marginBottom: '20px' }}
+                        style={{ marginBottom: '10px' }}
                     >
-                      < br />
                       < br />
 
                       <Button variant="primary" size="lg" style={{ backgroundColor: '#333', borderColor: '#333' }} >
@@ -79,7 +76,7 @@ const MainPage = () => {
                     </motion.div>
                   </Container>
                 </Container>
-                <Container className="my-4" style={{ paddingBottom: '20px' }}>
+                <Container className="my-4 d-flex flex-column align-items-center pr-4" style={{ paddingBottom: '20px' }}>
                   {requests.map((request, index) => (
                       <motion.div
                           key={request._id}
@@ -88,7 +85,7 @@ const MainPage = () => {
                           transition={{ duration: 0.5, delay: 2.5 + index * 0.2 }}
                           style={{ marginBottom: '20px' }}
                       >
-                        <TradeItem trade={request}/>
+                        <TradeItem trade={request} />
                       </motion.div>
                   ))}
                 </Container>
