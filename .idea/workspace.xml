@@ -9,7 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="181c6068-95ba-48ec-b7ff-c063932ee0b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/SignOut.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/SignOut.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/stylesheets/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/stylesheets/MainPage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "adam-79-redirect-for-admin-login",
+    "git-widget-placeholder": "adam-10-implementing-home-page",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/adamwinfield-smith/Documents/GitHub/professor-trading-card/app/public/images",
     "list.type.of.created.stylesheet": "CSS",
@@ -91,7 +93,6 @@
       <workItem from="1714072443476" duration="3827000" />
       <workItem from="1714076367352" duration="2500000" />
       <workItem from="1714093270228" duration="1854000" />
-      <workItem from="1714266681756" duration="689000" />
     </task>
     <servers />
   </component>
