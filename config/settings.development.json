@@ -6,10 +6,10 @@
     {"name": "Bulbasaur", "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "john@foo.com", "rarity": "Common"},
     {"name": "Adam Winfield-Smith", "image": "https://media.licdn.com/dms/image/D5603AQHTQsoPz1MmdQ/profile-displayphoto-shrink_200_200/0/1705556659983?e=1717632000&v=beta&t=I3TdZGfCT95HbpI7LQDAhMxKGmhDfPOpyX03Pzm_fIo", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "john@foo.com", "rarity": "Uncommon"},
     {"name": "Phat Ca", "image": "https://media.licdn.com/dms/image/D5635AQGVjxsdpjF7WQ/profile-framedphoto-shrink_200_200/0/1688445546124?e=1713002400&v=beta&t=HNKGEvujl-d8VoZi6GQXzEkjg3S7G9PhIgJ0BqPp27s", "description": "The one and only man", "owner": "john@foo.com", "rarity": "Mythic"},
-    {"name": "Adam Winfield-Smith", "image": "https://media.licdn.com/dms/image/D5603AQHTQsoPz1MmdQ/profile-displayphoto-shrink_200_200/0/1705556659983?e=1717632000&v=beta&t=I3TdZGfCT95HbpI7LQDAhMxKGmhDfPOpyX03Pzm_fIo", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "admin@foo.com", "rarity": "Mythic"},
-    {"name": "Adam Winfield-Smith", "image": "https://media.licdn.com/dms/image/D5603AQHTQsoPz1MmdQ/profile-displayphoto-shrink_200_200/0/1705556659983?e=1717632000&v=beta&t=I3TdZGfCT95HbpI7LQDAhMxKGmhDfPOpyX03Pzm_fIo", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "admin@foo.com", "rarity": "Mythic"},
-    {"name": "Adam Winfield-Smith", "image": "https://media.licdn.com/dms/image/D5603AQHTQsoPz1MmdQ/profile-displayphoto-shrink_200_200/0/1705556659983?e=1717632000&v=beta&t=I3TdZGfCT95HbpI7LQDAhMxKGmhDfPOpyX03Pzm_fIo", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "admin@foo.com", "rarity": "Mythic"},
-    {"name": "Adam Winfield-Smith", "image": "https://media.licdn.com/dms/image/D5603AQHTQsoPz1MmdQ/profile-displayphoto-shrink_200_200/0/1705556659983?e=1717632000&v=beta&t=I3TdZGfCT95HbpI7LQDAhMxKGmhDfPOpyX03Pzm_fIo", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "admin@foo.com", "rarity": "Mythic"}
+    {"name": "Adam Winfield-Smith", "image": "https://media.licdn.com/dms/image/D5603AQHTQsoPz1MmdQ/profile-displayphoto-shrink_200_200/0/1705556659983?e=1717632000&v=beta&t=I3TdZGfCT95HbpI7LQDAhMxKGmhDfPOpyX03Pzm_fIo", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "phat@foo.com", "rarity": "Mythic"},
+    {"name": "Adam Winfield-Smith", "image": "https://media.licdn.com/dms/image/D5603AQHTQsoPz1MmdQ/profile-displayphoto-shrink_200_200/0/1705556659983?e=1717632000&v=beta&t=I3TdZGfCT95HbpI7LQDAhMxKGmhDfPOpyX03Pzm_fIo", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "phat@foo.com", "rarity": "Mythic"},
+    {"name": "Adam Winfield-Smith", "image": "https://media.licdn.com/dms/image/D5603AQHTQsoPz1MmdQ/profile-displayphoto-shrink_200_200/0/1705556659983?e=1717632000&v=beta&t=I3TdZGfCT95HbpI7LQDAhMxKGmhDfPOpyX03Pzm_fIo", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "adam@foo.com", "rarity": "Mythic"},
+    {"name": "Adam Winfield-Smith", "image": "https://media.licdn.com/dms/image/D5603AQHTQsoPz1MmdQ/profile-displayphoto-shrink_200_200/0/1705556659983?e=1717632000&v=beta&t=I3TdZGfCT95HbpI7LQDAhMxKGmhDfPOpyX03Pzm_fIo", "description": "For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.", "owner": "adam@foo.com", "rarity": "Mythic"}
 
   ],
   "defaultAccounts": [
@@ -19,12 +19,6 @@
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" }
   ],
 
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
-  ],
 
   "monti": {
     "appId": "CGGWRr2tobFksShEz",
@@ -46,11 +40,7 @@
   "friendData": [
     {"sender": "admin@foo.com", "receiver": "john@foo.com", "status": "True"},
     {"sender": "phat@foo.com", "receiver": "john@foo.com", "status": "True"},
-    {"sender": "adam@foo.com", "receiver": "john@foo.com", "status": "True"},
-    {"sender": "test@foo.com", "receiver": "john@foo.com", "status": "False"},
-    {"sender": "test2@foo.com", "receiver": "john@foo.com", "status": "False"},
-    {"sender": "john@foo.com", "receiver": "admin2@foo.com", "status": "True"},
-    {"sender": "john@foo.com", "receiver": "admin3@foo.com", "status": "True"}
+    {"sender": "adam@foo.com", "receiver": "john@foo.com", "status": "True"}
 
   ]
 }

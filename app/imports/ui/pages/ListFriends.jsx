@@ -14,20 +14,21 @@ import SenderFriendCard from '../components/SenderFriendCard';
 
 const ListFriends = () => {
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
   const schema = new SimpleSchema(Friends.schema);
   const bridge = new SimpleSchema2Bridge(schema);
   const formRef = useRef(null);
 
   const submit = (doc) => {
     const { sender, receiver } = doc;
-    Meteor.call('addFriend', sender, receiver, (err) => {
+    Meteor.call('addFriend', sender, receiver, (err, result) => {
       if (err) {
         setError(err.reason);
-        console.error('Error:', err);
+        setSuccess('');
 
       } else {
-        setError('');
-        console.error('Error:', err);
+        setSuccess(result);
         if (formRef.current) {
           formRef.current.reset();
         }
@@ -78,8 +79,16 @@ const ListFriends = () => {
                 ''
               ) : (
                 <Alert variant="danger">
-                  <Alert.Heading>Registration was not successful</Alert.Heading>
+                  <Alert.Heading>Request was not successful</Alert.Heading>
                   {error}
+                </Alert>
+              )}
+              {success === '' ? (
+                ''
+              ) : (
+                <Alert variant="success">
+                  <Alert.Heading>Request was  successful</Alert.Heading>
+                  {success}
                 </Alert>
               )}
             </Col>

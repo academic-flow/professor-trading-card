@@ -10,6 +10,8 @@ if (Meteor.isServer) {
       Roles.createRole(options.role, { unlessExists: true });
       Roles.addUsersToRoles(user._id, options.role);
     }
+    user.availablePackage = 1;
+
     return user;
   });
 }

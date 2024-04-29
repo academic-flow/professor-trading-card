@@ -7,11 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fb1012a-0ebc-456c-afc7-91c323cf80c7" name="Changes" comment="" />
-    <list default="true" id="181c6068-95ba-48ec-b7ff-c063932ee0b3" name="Changes" comment="">
+    <list default="true" id="7fb1012a-0ebc-456c-afc7-91c323cf80c7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/TradeComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/TradeComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MainPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Methods.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,17 +70,10 @@
       <recent name="C:\Users\bacon\GitHub\ICS314\professor-trading-card\app\public\images" />
     </key>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-107bc6b7" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="181c6068-95ba-48ec-b7ff-c063932ee0b3" name="Changes" comment="" />
+      <changelist id="7fb1012a-0ebc-456c-afc7-91c323cf80c7" name="Changes" comment="" />
       <created>1713344740446</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -97,6 +88,7 @@
       <workItem from="1714093270228" duration="1854000" />
       <workItem from="1714266681756" duration="689000" />
       <workItem from="1714268082094" duration="11170000" />
+      <workItem from="1714352355596" duration="471000" />
     </task>
     <servers />
   </component>

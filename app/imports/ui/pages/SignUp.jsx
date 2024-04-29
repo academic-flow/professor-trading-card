@@ -17,6 +17,7 @@ const SignUp = ({ location }) => {
     email: String,
     password: String,
     key: { type: String, optional: true },
+    availablePackage: { type: Number, optional: true },
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
@@ -33,7 +34,7 @@ const SignUp = ({ location }) => {
         } else if (result === 'Account already exists for this key') {
           setError(result);
         } else {
-          Accounts.createUser({ email, password, role: result.role, username: email }, (err) => {
+          Accounts.createUser({ email, password, role: result.role, username: email, availablePackage: 1 }, (err) => {
             if (err) {
               setError(err.reason);
             } else {
