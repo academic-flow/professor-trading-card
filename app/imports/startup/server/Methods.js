@@ -101,7 +101,7 @@ Meteor.methods({
 
         return 'success trade';
       }
-      throw new Meteor.Error("can-not-trade', 'Cannot trade either you or your friend don't own the card anymore");
+      throw new Meteor.Error('can-not-trade', 'Cannot trade either you or your friend don\'t own the card anymore');
 
     }
     Trades.collection.insert({ sender: sender, receiver: receiver, card_wanted: selectedCardID, card_offer: myCardID });
@@ -129,7 +129,7 @@ Meteor.methods({
 
     }
     Trades.collection.remove({ $and: [{ sender: trade.sender }, { receiver: trade.receiver }, { card_wanted: trade.card_wanted }, { card_offer: trade.card_offer }] });
-    throw new Meteor.Error("can-not-trade', 'Cannot trade either you or your friend don't own the card anymore");
+    throw new Meteor.Error('can-not-trade', 'Cannot trade either you or your friend don\'t own the card anymore');
 
   },
   denyTrade: function (trade) {
@@ -142,7 +142,7 @@ Meteor.methods({
       const numberOfCards = 3;
       const randomCards = Cards.collection.find({ owner: 'None' }).fetch();
       if (randomCards.length < numberOfCards) {
-        throw new Meteor.Error("insuffiecient-cards', 'Insufficient cards in database please contact UH manoa to resolve this issue");
+        throw new Meteor.Error('insufficient-cards', 'Insufficient cards in database please contact UH Manoa to resolve this issue');
 
       } else {
 
@@ -163,7 +163,7 @@ Meteor.methods({
 
       }
     } else {
-      throw new Meteor.Error("you-dont-have-any-package', 'You don't have any package to open");
+      throw new Meteor.Error('you-dont-have-any-package', 'You don\'t have any package to open');
 
     }
   },

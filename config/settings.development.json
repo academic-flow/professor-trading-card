@@ -40,9 +40,7 @@
   "friendData": [
     {"sender": "admin@foo.com", "receiver": "john@foo.com", "status": "True"},
     {"sender": "phat@foo.com", "receiver": "john@foo.com", "status": "True"},
-    {"sender": "adam@foo.com", "receiver": "john@foo.com", "status": "True"},
-    {"sender": "john@foo.com", "receiver": "phat@foo.com", "status": "True"},
-    {"sender": "john@foo.com", "receiver": "adam@foo.com", "status": "True"}
+    {"sender": "adam@foo.com", "receiver": "john@foo.com", "status": "True"}
 
   ]
 }

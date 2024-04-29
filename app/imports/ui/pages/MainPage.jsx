@@ -40,7 +40,16 @@ const MainPage = () => {
 
   return (
     ready ? (
-      <>
+      <div
+        className="py-4 bg-image"
+        style={{
+          backgroundColor: '#E5F6DF',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '100vh',
+          width: '100vw',
+        }}
+      >
         <Container className="my-4" style={{ paddingBottom: '20px' }}>
           <div className="row" style={{ paddingBottom: '20px' }}>
             <Container fluid style={{ paddingBottom: '20px' }}>
@@ -70,15 +79,6 @@ const MainPage = () => {
                 >
                   Available Packages To Open:
                 </motion.h2>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.5 }}
-                  style={{ color: '#666', fontSize: '18px', marginBottom: '20px' }}
-                >
-                  Click here to open your package:
-                </motion.p>
                 <br />
                 <motion.p
                   initial={{ opacity: 0, y: 50 }}
@@ -134,20 +134,7 @@ const MainPage = () => {
             </Container>
           </div>
         </Container>
-        <Container className="my-4" style={{ paddingBottom: '20px' }}>
-          {requests.map((request, index) => (
-            <motion.div
-              key={request._id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 2.5 + index * 0.2 }}
-              style={{ marginBottom: '20px' }}
-            >
-              <TradeItem trade={request} />
-            </motion.div>
-          ))}
-        </Container>
-      </>
+      </div>
 
     ) : <LoadingSpinner />
   );
