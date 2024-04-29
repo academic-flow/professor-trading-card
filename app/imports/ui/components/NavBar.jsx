@@ -35,12 +35,12 @@ const NavBar = ({ ready }) => {
                   </a>
                   <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li className="nav-item">
-                      <a href="/TeacherHome" className="nav-link px-0 align-middle">
+                      <a href="/TeacherHome" className="nav-link px-0 align-middle" id="navbar-home-admin">
                         <House className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Home</span>
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a href="/add-card" className="nav-link px-0 align-middle ">
+                      <a href="/add-card" className="nav-link px-0 align-middle " id="navbar-card-admin">
                         <CardList className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">TeacherAddCard</span>
                       </a>
                     </li>
@@ -58,7 +58,7 @@ const NavBar = ({ ready }) => {
                 </div>
               </div>
             </div>
-            <main className="col ps-md-2 pt-2">
+            <main id="openMenuAdmin" className="col ps-md-2 pt-2">
               <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none "><List className="fs-4" /></a>
             </main>
           </div>
@@ -78,17 +78,17 @@ const NavBar = ({ ready }) => {
                 </a>
                 <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                   <li className="nav-item">
-                    <a href="/home" className="nav-link px-0 align-middle">
+                    <a href="/home" className="nav-link px-0 align-middle" id="navbar-home">
                       <House className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Home</span>
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a href="/list" className="nav-link px-0 align-middle">
+                    <a href="/list" className="nav-link px-0 align-middle" id="navbar-collection">
                       <Collection className="fs-4 text-white" /> <span className="ms-1 d-none d-sm-inline text-white">Collection</span>
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a href="/friendlist" className="nav-link px-0 align-middle">
+                    <a href="/friendlist" className="nav-link px-0 align-middle" id="navbar-friend">
                       <People className="fs-4 text-white" /><span className="ms-1 d-none d-sm-inline text-white">Friends</span>
                     </a>
                   </li>
@@ -96,17 +96,17 @@ const NavBar = ({ ready }) => {
                 <hr />
                 <div className="dropdown pb-4">
                   <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" className="rounded-circle" />
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" className="rounded-circle"/>
                     <span className="d-none d-sm-inline mx-1">{currentUser}</span>
                   </a>
-                  <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                  <ul id="accountClickSignOut" className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                     <li><a className="dropdown-item" href="/signout">Sign out</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-          <main className="col ps-md-2 pt-2">
+          <main id="openMenu" className="col ps-md-2 pt-2">
             <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-2 text-decoration-none "><List className="fs-4" /></a>
           </main>
         </div>

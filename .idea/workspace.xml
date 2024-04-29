@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fb1012a-0ebc-456c-afc7-91c323cf80c7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Methods.js" afterDir="false" />
-    </list>
+    <list default="true" id="181c6068-95ba-48ec-b7ff-c063932ee0b3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,11 +17,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/tests/navbar.component.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/tests/signin.page.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/tests/tests.testcafe.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -42,38 +46,43 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-&lt;&lt;&lt;&lt;&lt;&lt;&lt;
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/bacon/GitHub/ICS314/professor-trading-card/app/public/images&quot;,
     &quot;git-widget-placeholder&quot;: &quot;adam-72-styling-the-trade-component&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/adamwinfield-smith/Documents/GitHub/professor-trading-card/app/public/images&quot;,
-&gt;&gt;&gt;&gt;&gt;&gt;&gt;
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.smartKeys&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\bacon\GitHub\ICS314\professor-trading-card\app\public\images" />
       <recent name="$PROJECT_DIR$/app/public/images" />
       <recent name="$PROJECT_DIR$/app/.deploy" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\bacon\GitHub\ICS314\professor-trading-card\app\public\images" />
-    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="professor-trading-card" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="professor-trading-card" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7fb1012a-0ebc-456c-afc7-91c323cf80c7" name="Changes" comment="" />
+      <changelist id="181c6068-95ba-48ec-b7ff-c063932ee0b3" name="Changes" comment="" />
       <created>1713344740446</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -87,22 +96,12 @@
       <workItem from="1714076367352" duration="2500000" />
       <workItem from="1714093270228" duration="1854000" />
       <workItem from="1714266681756" duration="689000" />
-      <workItem from="1714268082094" duration="11170000" />
-      <workItem from="1714352355596" duration="471000" />
+      <workItem from="1714268082094" duration="2131000" />
+      <workItem from="1714272531177" duration="19410000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/imports/ui/pages/ListFriends.jsx</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
