@@ -35,12 +35,12 @@ Meteor.methods({
     const alreadyFriendC1 = Friends.collection.findOne({ $and: [{ sender: sender }, { receiver: receiver }, { status: true }] });
     const alreadyFriendC2 = Friends.collection.findOne({ $and: [{ sender: receiver }, { receiver: sender }, { status: true }] });
     if (alreadyFriendC1 || alreadyFriendC2) {
-      throw new Meteor.Error('already-friend', 'You are already friend');
+      throw new Meteor.Error('already-friend', 'You are already friends');
     }
 
     const checkSenderExist = Friends.collection.findOne({ $and: [{ sender: sender }, { receiver: receiver }, { status: false }] });
     if (checkSenderExist) {
-      throw new Meteor.Error('already-pending', 'You already send the friend request');
+      throw new Meteor.Error('already-pending', 'You have already sent a friend request');
     }
 
     const checkReceiveExist = Friends.collection.findOne({ $and: [{ sender: receiver }, { receiver: sender }, { status: false }] });
@@ -83,7 +83,7 @@ Meteor.methods({
     const checkingTradeExistC1 = Trades.collection.findOne({ $and: [{ sender: sender }, { receiver: receiver }, { card_wanted: selectedCardID }, { card_offer: myCardID }] });
     const checkingTradeExistC2 = Trades.collection.findOne({ $and: [{ sender: receiver }, { receiver: sender }, { card_wanted: myCardID }, { card_offer: selectedCardID }] });
     if (checkingTradeExistC1) {
-      throw new Meteor.Error('already-pending', 'You already send asked for this trade');
+      throw new Meteor.Error('already-pending', 'You already sent a request for this trade');
     }
     if (checkingTradeExistC2) {
       const friendStillHaveCard = Cards.collection.findOne({ $and: [{ _id: selectedCardID }, { owner: receiver }] });
@@ -142,7 +142,7 @@ Meteor.methods({
       const numberOfCards = 3;
       const randomCards = Cards.collection.find({ owner: 'None' }).fetch();
       if (randomCards.length < numberOfCards) {
-        throw new Meteor.Error('insufficient-cards', 'Insufficient cards in database please contact UH Manoa to resolve this issue');
+        throw new Meteor.Error('insufficient-cards', 'Insufficient cards in the database please contact UH Manoa to resolve this issue');
 
       } else {
 
@@ -163,7 +163,7 @@ Meteor.methods({
 
       }
     } else {
-      throw new Meteor.Error('you-dont-have-any-package', 'You don\'t have any package to open');
+      throw new Meteor.Error('you-dont-have-any-package', 'You don\'t have any packs to open');
 
     }
   },
