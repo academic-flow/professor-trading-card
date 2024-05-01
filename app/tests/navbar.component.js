@@ -21,6 +21,7 @@ class NavBar {
   }
 
   async gotoFriendListPage(testController) {
+    await testController.click('#openMenu');
     await testController.click('#navbar-friend');
   }
   async gotoCollectionListPage(testController) {
@@ -30,7 +31,8 @@ class NavBar {
     await testController.click('#navbar-home');
   }
   async gotoCardListPage(testController) {
-    await testController.click('#navbar-home');
+    await testController.click('#openMenu');
+    await testController.click('#navbar-collection');
   }
   async gotoHomeAdminListPage(testController) {
     await testController.click('#navbar-home-admin');

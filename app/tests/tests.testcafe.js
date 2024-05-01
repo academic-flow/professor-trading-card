@@ -9,6 +9,7 @@ import { friendPage } from './friend.page';
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
+const credentialsadam = { username: 'adam@foo.com', password: 'changeme' };
 const credentialsAdmin = { username: 'admin@foo.com', password: 'changeme' };
 fixture('meteor-application-template-react localhost test with default db')
   .page('http://localhost:3000');
@@ -40,6 +41,20 @@ test('Test Collection works in regular User', async (testController) => {
   await navBar.gotoCollectionListPage(testController);
 });
 
+test('Test friend list can trade with others', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await testController.wait(3000);
+  await navBar.gotoFriendListPage(testController);
+  await testController.click('#view-collection-button');
+  await testController.click('#trade');
+  await testController.click('.btn-close');
+  await navBar.gotoCardListPage(testController);
+  await testController.click('.card');
+  await testController.wait(5000);
+
+});
+
 test('Test Home works in regular User', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
@@ -60,4 +75,5 @@ test('Test CardAdmin button works', async (testController) => {
   await testController.click('#openMenuAdmin');
   await navBar.gotoCardAdminListPage(testController);
 });
+
 

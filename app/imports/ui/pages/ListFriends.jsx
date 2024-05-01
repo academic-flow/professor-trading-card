@@ -69,7 +69,7 @@ const ListFriends = () => {
                   <Card.Body>
                     <HiddenField name="sender" value={currentUserName} />
                     <HiddenField name="status" value="false" />
-                    <TextField name="receiver" placeholder="Add friend by username" label={false} required="True" />
+                    <TextField id="friendEmailinput" name="receiver" placeholder="Add friend by username" label={false} required="True" />
                     <ErrorsField />
                     <SubmitField />
                   </Card.Body>

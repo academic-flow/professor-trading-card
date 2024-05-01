@@ -32,7 +32,7 @@ const ReceiverFriendCard = ({ user }) => {
             </Col>
 
             <Col md={3} className="d-flex align-items-center justify-content-center">
-              <Button variant="danger" onClick={removeFriend}>
+              <Button id="removefriendbutton" variant="danger" onClick={removeFriend}>
                 REMOVE FRIEND
               </Button>
             </Col>

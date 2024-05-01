@@ -36,13 +36,13 @@ const FriendRequestCard = ({ request }) => {
 
             <Col md={3} className=" align-items-center justify-content-center">
               <Row>
-                <Button variant="primary" className="pb-2" onClick={confirmRequest}>
+                <Button id="confirmbutton" variant="primary" className="pb-2" onClick={confirmRequest}>
                   Confirm
                 </Button>
               </Row>
               <Row>
 
-                <Button variant="primary" className="mt-4" onClick={rejectRequest}>
+                <Button id="rejectbutton" variant="primary" className="mt-4" onClick={rejectRequest}>
                   Reject
                 </Button>
               </Row>

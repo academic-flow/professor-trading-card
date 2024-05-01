@@ -38,8 +38,8 @@
     { "key": "10"}
   ],
   "friendData": [
-    {"sender": "admin@foo.com", "receiver": "john@foo.com", "status": "True"},
     {"sender": "phat@foo.com", "receiver": "john@foo.com", "status": "True"},
+    {"sender": "admin@foo.com", "receiver": "john@foo.com", "status": "True"},
     {"sender": "adam@foo.com", "receiver": "john@foo.com", "status": "True"}
 
   ]
