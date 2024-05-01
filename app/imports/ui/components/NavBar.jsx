@@ -47,8 +47,8 @@ const NavBar = ({ ready }) => {
                   </ul>
                   <hr />
                   <div className="dropdown pb-4">
-                    <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="morning-brew-coffee.png" width="30" height="30" className="rounded-circle" />
+                    <a href="" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="https://static.vecteezy.com/system/resources/previews/027/818/260/non_2x/project-management-silhouette-icon-leader-works-person-with-gear-glyph-pictogram-social-teamwork-symbol-workforce-concept-solid-sign-human-with-cog-wheel-isolated-illustration-vector.jpg" alt="/images/Admin_Icon.jpeg" width="30" height="30" className="rounded-circle" />
                       <span className="d-none d-sm-inline mx-1">{currentUser}</span>
                     </a>
                     <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">

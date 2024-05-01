@@ -21,7 +21,7 @@ const ReceiverFriendCard = ({ user }) => {
         <Card.Body>
           <Row className="g-0">
             <Col md={4} className="text-center">
-              <Image src="https://github.com/philipmjohnson.png" width={100} roundedCircle />
+              <Image src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width={100} roundedCircle />
             </Col>
 
             <Col className="px-3">
