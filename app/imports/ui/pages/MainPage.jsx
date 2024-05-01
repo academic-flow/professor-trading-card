@@ -45,8 +45,6 @@ const MainPage = () => {
         style={{
           backgroundColor: '#E5F6DF',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '100vh',
           width: '100vw',
         }}
       >

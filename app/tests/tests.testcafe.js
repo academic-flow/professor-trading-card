@@ -41,18 +41,28 @@ test('Test Collection works in regular User', async (testController) => {
   await navBar.gotoCollectionListPage(testController);
 });
 
-test('Test friend list can trade with others', async (testController) => {
+test.only('Test friend list can trade with others', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await testController.wait(3000);
+  await testController.click('#openMenu');
   await navBar.gotoFriendListPage(testController);
   await testController.click('#view-collection-button');
   await testController.click('#trade');
+  await testController.click('#completeTrade');
+  await testController.wait(3000);
   await testController.click('.btn-close');
   await navBar.gotoCardListPage(testController);
   await testController.click('.card');
-  await testController.wait(5000);
-
+  await testController.click('#openMenu');
+  await testController.click('#dropdownUser1');
+  await testController.click('#accountClickSignOut');
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentialsadam.username, credentials.password);
+  await friendPage.acceptTrade(testController);
+  await testController.click('#openMenu');
+  await navBar.gotoCollectionListPage(testController);
+  await testController.wait(3000);
 });
 
 test('Test Home works in regular User', async (testController) => {

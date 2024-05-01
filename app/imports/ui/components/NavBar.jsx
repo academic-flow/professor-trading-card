@@ -24,7 +24,7 @@ const NavBar = ({ ready }) => {
     );
   } if (isAdmin) {
     return (
-      <div className="d-flex flex-column min-vh-100">
+      <div className="d-flex flex-column min-vh-100" style={{ backgroundColor: '#E5F6DF' }}>
         <div className="container-fluid">
           <div className="row flex-nowrap">
             <div className="col-auto px-0">
@@ -67,7 +67,7 @@ const NavBar = ({ ready }) => {
     );
   }
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column min-vh-100 " style={{ backgroundColor: '#E5F6DF' }}>
       <div className="container-fluid">
         <div className="row flex-nowrap">
           <div className="col-auto px-0">

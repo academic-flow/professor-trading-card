@@ -14,6 +14,9 @@ class FriendPage {
     await testController.typeText('#friendEmailinput', username);
     await testController.click('#friendEmailinput input.btn.btn-primary');
   }
+  async acceptTrade(testController, username, password) {
+    await testController.click('#buttonAccept');
+  }
 }
 
 export const friendPage = new FriendPage();
