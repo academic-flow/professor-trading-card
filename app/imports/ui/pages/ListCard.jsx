@@ -24,19 +24,28 @@ const ListCard = () => {
     };
   }, []);
   return (ready ? (
-    <div class="container">
-    <div className="d-flex flex-row justify-content-around">
-      <div className="d-flex justify-content-center flex-column text-center align-items-center" id="rightside" style={{ flex: 2 }}>
-        <h1>ProfTCG</h1>
-        <h4>Your Card Collection List</h4>
-        <div className="container text-center">
-          <div className="row row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 ">
-            {cards.map((card) => <CardItem key={card._id} card={card} />)}
-
+    <div
+      className="py-4 bg-image"
+      style={{
+        backgroundColor: '#E5F6DF',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        width: '100vw',
+      }}
+    >
+      <div className="container">
+        <div className="d-flex flex-row justify-content-around">
+          <div className="d-flex justify-content-center flex-column text-center align-items-center" id="rightside" style={{ flex: 2 }}>
+            <h1>ProfTCG</h1>
+            <h4>Your Card Collection List</h4>
+            <div className="container text-center">
+              <div className="row row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 ">
+                {cards.map((card) => <CardItem key={card._id} card={card} />)}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   ) : <LoadingSpinner />);
 };

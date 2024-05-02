@@ -9,7 +9,7 @@ import { friendPage } from './friend.page';
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
-const credentialsadam = { username: 'adam@foo.com', password: 'changeme' };
+const credentialsadam = { username: 'phat@foo.com', password: 'changeme' };
 const credentialsAdmin = { username: 'admin@foo.com', password: 'changeme' };
 fixture('meteor-application-template-react localhost test with default db')
   .page('http://localhost:3000');
@@ -41,7 +41,7 @@ test('Test Collection works in regular User', async (testController) => {
   await navBar.gotoCollectionListPage(testController);
 });
 
-test.only('Test friend list can trade with others', async (testController) => {
+test('Test friend list can trade with others', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await testController.wait(3000);
