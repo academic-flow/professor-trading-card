@@ -56,58 +56,83 @@ const ListFriends = () => {
   }, []);
 
   return (ready ? (
-    <Container className="py-3">
-      <Row>
+    <div
+      className="py-4 bg-image"
+      style={{
+        backgroundColor: '#E5F6DF',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        width: '100vw',
+      }}
+    >
+      <Container className="py-3">
+        <Row>
 
-        <Col>
-          <h1 className="text-center py-4">ProfTCG</h1>
+          <Col>
+            <h1 className="text-center py-4">ProfTCG</h1>
 
-          <Row className="justify-content-center">
-            <Col md={7}>
-              <AutoForm ref={formRef} schema={bridge} onSubmit={data => submit(data)}>
-                <Card>
-                  <Card.Body>
-                    <HiddenField name="sender" value={currentUserName} />
-                    <HiddenField name="status" value="false" />
-                    <TextField name="receiver" placeholder="Add friend by username" label={false} required="True" />
-                    <ErrorsField />
-                    <SubmitField />
-                  </Card.Body>
-                </Card>
-              </AutoForm>
-              {error === '' ? (
-                ''
-              ) : (
-                <Alert variant="danger">
-                  <Alert.Heading>Request was not successful</Alert.Heading>
-                  {error}
-                </Alert>
-              )}
-              {success === '' ? (
-                ''
-              ) : (
-                <Alert variant="success">
-                  <Alert.Heading>Request was  successful</Alert.Heading>
-                  {success}
-                </Alert>
-              )}
+            <Row className="justify-content-center">
+              <Col md={7}>
+                <AutoForm ref={formRef} schema={bridge} onSubmit={data => submit(data)}>
+                  <Card>
+                    <Card.Body>
+                      <HiddenField name="sender" value={currentUserName} />
+                      <HiddenField name="status" value="false" />
+                      <TextField id="friendEmailinput" name="receiver" placeholder="Add friend by username" label={false} required="True" />
+                      <ErrorsField />
+                      <SubmitField />
+                    </Card.Body>
+                  </Card>
+                </AutoForm>
+                {error === '' ? (
+                  ''
+                ) : (
+                  <Alert variant="danger">
+                    <Alert.Heading>Request was not successful</Alert.Heading>
+                    {error}
+                  </Alert>
+                )}
+                {success === '' ? (
+                  ''
+                ) : (
+                  <Alert variant="success">
+                    <Alert.Heading>Request was successful</Alert.Heading>
+                    {success}
+                  </Alert>
+                )}
+              </Col>
+            </Row>
+
+            <Col className="text-center py-2">
+              <h2>Your Friends List</h2>
             </Col>
-          </Row>
-
-          <Col className="text-center">
-            <h2>Your Friends List</h2>
+            {receiverFriends.map((friend) => (
+              <ReceiverFriendCard
+                key={friend._id}
+                user={friend}
+              />
+            ))}
+            {senderFriends.map((friend) => (
+              <SenderFriendCard
+                key={friend._id}
+                user={friend}
+              />
+            ))}
+            <Col className="text-center py-2">
+              <h2>Friend Request</h2>
+            </Col>
+            {friendRequest.map((request) => (
+              <FriendRequestCard
+                key={request._id}
+                request={request}
+              />
+            ))}
           </Col>
-          {receiverFriends.map((friend) => <ReceiverFriendCard key={friend._id} user={friend} />)}
-          {senderFriends.map((friend) => <SenderFriendCard key={friend._id} user={friend} />)}
-          <Col className="text-center">
-            <h2>Friend Request</h2>
-          </Col>
-          {friendRequest.map((request) => <FriendRequestCard key={request._id} request={request} />)}
-        </Col>
 
-        <Col md={1} />
-      </Row>
-    </Container>
+          <Col md={1} />
+        </Row>
+      </Container>
+    </div>
   ) : <LoadingSpinner />);
 };
 

@@ -9,7 +9,14 @@ class FriendPage {
 
     await t.wait(5000);
   }
-
+  async addfriend(testController, username, password) {
+    await this.isDisplayed(testController);
+    await testController.typeText('#friendEmailinput', username);
+    await testController.click('#friendEmailinput input.btn.btn-primary');
+  }
+  async acceptTrade(testController, username, password) {
+    await testController.click('#buttonAccept');
+  }
 }
 
 export const friendPage = new FriendPage();

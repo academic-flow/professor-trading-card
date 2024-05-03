@@ -92,10 +92,10 @@ const TradeItem = ({ trade }) => {
                 </div>
               </div>
               <div className="d-flex justify-content-center mt-4">
-                <Button variant="primary" className="justify-content-center" style={{backgroundColor: 'green'}} onClick={confirmTrade}>
+                <Button id="buttonAccept" variant="primary" className="justify-content-center" style={{backgroundColor: 'green'}} onClick={confirmTrade}>
                   Accept
                 </Button>
-                <Button variant="primary" style={{backgroundColor: 'red'}} onClick={denyTrade}>
+                <Button id="buttonDeny" variant="primary" style={{backgroundColor: 'red'}} onClick={denyTrade}>
                   Deny
                 </Button>
               </div>

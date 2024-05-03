@@ -49,28 +49,52 @@ const TeacherAddCard = () => {
 
   let fRef = null;
   return (
-    <Container className="py-3">
-      <Row className="justify-content-center">
-        <Col xs={5}>
-          <Col className="text-center"><h2>Add Stuff</h2></Col>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={(data) => submit(data, data.amount, fRef)}>
-            <Card>
-              <Card.Body>
-                <TextField name="name" />
-                <TextField name="image" />
-                <TextField name="description" />
-                <TextField name="owner" optional />
-                <SelectField name="rarity" />
-                <BoolField name="tradeAble" defaultChecked />
-                <NumField name="amount" defaultValue={1} min={1} />
-                <SubmitField value="Submit" />
-                <ErrorsField />
-              </Card.Body>
-            </Card>
-          </AutoForm>
-        </Col>
-      </Row>
-    </Container>
+    <div
+      className="py-4 bg-image"
+      style={{
+        backgroundColor: '#E5F6DF',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        width: '100vw',
+      }}
+    >
+      <Container className="py-3">
+        <Row className="justify-content-center">
+          <Col xs={5}>
+            <Col className="text-center"><h2>Add Stuff</h2></Col>
+            <AutoForm
+              ref={ref => { fRef = ref; }}
+              schema={bridge}
+              onSubmit={(data) => submit(data, data.amount, fRef)}
+            >
+              <Card>
+                <Card.Body>
+                  <TextField name="name" />
+                  <TextField name="image" />
+                  <TextField name="description" />
+                  <TextField
+                    name="owner"
+                    optional
+                  />
+                  <SelectField name="rarity" />
+                  <BoolField
+                    name="tradeAble"
+                    defaultChecked
+                  />
+                  <NumField
+                    name="amount"
+                    defaultValue={1}
+                    min={1}
+                  />
+                  <SubmitField value="Submit" />
+                  <ErrorsField />
+                </Card.Body>
+              </Card>
+            </AutoForm>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 

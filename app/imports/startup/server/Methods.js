@@ -140,15 +140,15 @@ Meteor.methods({
     const user = Meteor.users.findOne({ username: username });
     if (user.availablePackage > 0) {
       const numberOfCards = 3;
-      const randomCards = Cards.collection.find({ owner: 'None' }).fetch();
-      if (randomCards.length < numberOfCards) {
+      const allCards = Cards.collection.find({ owner: 'None' }).fetch();
+      for (let i = allCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [allCards[i], allCards[j]] = [allCards[j], allCards[i]];
+      }
+      if (allCards.length < numberOfCards) {
         throw new Meteor.Error('insufficient-cards', 'Insufficient cards in the database please contact UH Manoa to resolve this issue');
-
       } else {
-
-        const randomIndex = Math.floor(Math.random() * (randomCards.length - numberOfCards + 1));
-        const selectedCards = randomCards.slice(randomIndex, randomIndex + numberOfCards);
-
+        const selectedCards = allCards.slice(0, numberOfCards);
         selectedCards.forEach(card => {
           Cards.collection.update(
             { _id: card._id },
@@ -160,11 +160,9 @@ Meteor.methods({
           { $inc: { availablePackage: -1 } },
         );
         return 'Check your collection for all the new cards';
-
       }
     } else {
       throw new Meteor.Error('you-dont-have-any-package', 'You don\'t have any packs to open');
-
     }
   },
 });

@@ -81,7 +81,7 @@ const ViewCollection = () => {
             {myCards.map((card) => (
               <div className="d-flex justify-content-evenly">
                 <CardItem card={card} key={card._id} />
-                <Button className="align-self-center" onClick={() => tradeFunction(card._id)}>Select to trade with {selectedCard && selectedCard.name}</Button>
+                <Button id="completeTrade" className="align-self-center" onClick={() => tradeFunction(card._id)}>Select to trade with {selectedCard && selectedCard.name}</Button>
               </div>
 
             ))}
