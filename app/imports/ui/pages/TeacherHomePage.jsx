@@ -14,7 +14,7 @@ const TeacherHome = () => (
     <Container id="landing-page" fluid className="py-3">
       <Row className="align-middle text-center">
         <Col>
-          <h1></h1>
+          <h1 />
           <Image src="/images/UH-Seal.png" width="200" roundedCircle />
         </Col>
         <Col xs={8} className="d-flex flex-column justify-content-center">

@@ -70,37 +70,37 @@ const SignUp = ({ location }) => {
   }
 
   return (
-      <Container id="signup-page" className="py-3">
-        <Row className="justify-content-center">
-          <Col xs={5}>
-            <Col className="text-center">
-              <h2>Register your account</h2>
-            </Col>
-            <AutoForm schema={bridge} onSubmit={data => submit(data)}>
-              <Card>
-                <Card.Body>
-                  <TextField name="email" placeholder="E-mail address" />
-                  <TextField name="password" placeholder="Password" type="password" />
-                  <TextField name="key" placeholder="Key" optional />
-                  <ErrorsField />
-                  <SubmitField />
-                </Card.Body>
-              </Card>
-            </AutoForm>
-            <Alert variant="light">
-              Already have an account? Login <Link to="/signin">here</Link>
-            </Alert>
-            {error === '' ? (
-                ''
-            ) : (
-                <Alert variant="danger">
-                  <Alert.Heading>Registration was not successful</Alert.Heading>
-                  {error}
-                </Alert>
-            )}
+    <Container id="signup-page" className="py-3">
+      <Row className="justify-content-center">
+        <Col xs={5}>
+          <Col className="text-center">
+            <h2>Register your account</h2>
           </Col>
-        </Row>
-      </Container>
+          <AutoForm schema={bridge} onSubmit={data => submit(data)}>
+            <Card>
+              <Card.Body>
+                <TextField name="email" placeholder="E-mail address" />
+                <TextField name="password" placeholder="Password" type="password" />
+                <TextField name="key" placeholder="Key" optional />
+                <ErrorsField />
+                <SubmitField />
+              </Card.Body>
+            </Card>
+          </AutoForm>
+          <Alert variant="light">
+            Already have an account? Login <Link to="/signin">here</Link>
+          </Alert>
+          {error === '' ? (
+            ''
+          ) : (
+            <Alert variant="danger">
+              <Alert.Heading>Registration was not successful</Alert.Heading>
+              {error}
+            </Alert>
+          )}
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
@@ -115,4 +115,3 @@ SignUp.defaultProps = {
 };
 
 export default SignUp;
-

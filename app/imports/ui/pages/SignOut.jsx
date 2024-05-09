@@ -13,9 +13,9 @@ const SignOut = () => {
   }, [navigate]);
 
   return (
-      <Col id="signout-page" className="text-center py-3">
-        <h2>You are signed out.</h2>
-      </Col>
+    <Col id="signout-page" className="text-center py-3">
+      <h2>You are signed out.</h2>
+    </Col>
   );
 };
 

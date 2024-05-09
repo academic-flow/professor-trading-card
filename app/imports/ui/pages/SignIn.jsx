@@ -20,7 +20,6 @@ const SignIn = () => {
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
-
   const { currentUser, isAdmin } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
     isAdmin: Roles.userIsInRole(Meteor.userId(), 'admin'),
@@ -46,42 +45,42 @@ const SignIn = () => {
   if (redirect) {
     if (isAdmin) {
       return (<Navigate to="/TeacherHome" />);
-    } else {
-      return (<Navigate to="/home" />);
     }
+    return (<Navigate to="/home" />);
+
   }
   // Otherwise return the Login form.
   return (
-      <Container id="signin-page" className="py-3">
-        <Row className="justify-content-center">
-          <Col xs={5}>
-            <Col className="text-center">
-              <h2>Login to your account</h2>
-            </Col>
-            <AutoForm schema={bridge} onSubmit={data => submit(data)}>
-              <Card>
-                <Card.Body>
-                  <TextField id="signin-form-email" name="email" placeholder="E-mail address" />
-                  <TextField id="signin-form-password" name="password" placeholder="Password" type="password" />
-                  <ErrorsField />
-                  <SubmitField id="signin-form-submit" />
-                </Card.Body>
-              </Card>
-            </AutoForm>
-            <Alert variant="light">
-              <Link to="/signup">Click here to Register</Link>
-            </Alert>
-            {error === '' ? (
-                ''
-            ) : (
-                <Alert variant="danger">
-                  <Alert.Heading>Login was not successful</Alert.Heading>
-                  {error}
-                </Alert>
-            )}
+    <Container id="signin-page" className="py-3">
+      <Row className="justify-content-center">
+        <Col xs={5}>
+          <Col className="text-center">
+            <h2>Login to your account</h2>
           </Col>
-        </Row>
-      </Container>
+          <AutoForm schema={bridge} onSubmit={data => submit(data)}>
+            <Card>
+              <Card.Body>
+                <TextField id="signin-form-email" name="email" placeholder="E-mail address" />
+                <TextField id="signin-form-password" name="password" placeholder="Password" type="password" />
+                <ErrorsField />
+                <SubmitField id="signin-form-submit" />
+              </Card.Body>
+            </Card>
+          </AutoForm>
+          <Alert variant="light">
+            <Link to="/signup">Click here to Register</Link>
+          </Alert>
+          {error === '' ? (
+            ''
+          ) : (
+            <Alert variant="danger">
+              <Alert.Heading>Login was not successful</Alert.Heading>
+              {error}
+            </Alert>
+          )}
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
