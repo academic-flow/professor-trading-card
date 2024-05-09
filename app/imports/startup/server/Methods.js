@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+// eslint-disable-next-line no-unused-vars
 import { Accounts } from 'meteor/accounts-base';
 import { Keys } from '../../api/key/Key';
 import { Friends } from '../../api/friend/Friend';
@@ -7,6 +8,7 @@ import { Trades } from '../../api/trade/Trade';
 
 Meteor.methods({
   // key validate function check if the key exist in database and the status if everything good return admin for role
+  // eslint-disable-next-line meteor/audit-argument-checks
   keyValidate: function (key) {
     const keyData = Keys.collection.findOne({ key: key });
 

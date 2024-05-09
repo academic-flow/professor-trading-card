@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
+// eslint-disable-next-line no-unused-vars
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+// eslint-disable-next-line no-unused-vars
 import ReactCardFlip from 'react-card-flip';
-import LoadingSpinner from './LoadingSpinner';
+// eslint-disable-next-line no-unused-vars
 import { Row, Col } from 'react-bootstrap';
-import style from '../../../public/stylesheets/tradeComponent.css'
+import LoadingSpinner from './LoadingSpinner';
+// eslint-disable-next-line no-unused-vars
+import style from '../../../public/stylesheets/tradeComponent.css';
 
 const TradeItem = ({ trade }) => {
   const [cardData, setCardData] = useState(null);
@@ -15,14 +19,14 @@ const TradeItem = ({ trade }) => {
 
   const getTextColor = (rarity) => {
     switch (rarity) {
-      case 'Common':
-        return '#A9A9A9';
-      case 'Uncommon':
-        return '#008000';
-      case 'Mythic':
-        return '#FF4500';
-      default:
-        return 'none';
+    case 'Common':
+      return '#A9A9A9';
+    case 'Uncommon':
+      return '#008000';
+    case 'Mythic':
+      return '#FF4500';
+    default:
+      return 'none';
     }
   };
 
@@ -57,25 +61,18 @@ const TradeItem = ({ trade }) => {
   }, [trade.card_wanted, trade.card_offer]);
 
   return (
-      <div className="d-flex">
-        {loading ? (
-            <LoadingSpinner />
-        ) : (
-            <div className="d-flex tradeContainer flex-column px-3">
-              <h4>{trade.sender} would like to trade with you:</h4>
-              <div className="d-flex">
-                <div className="cardWanted">
-                  <Card style={{ width: '18rem' , margin: '10px'}} className="d-flex mr-3">
-                    <Card.Title>Card wanted:</Card.Title>
-                    <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
-                      <Card.Img variant="top" src={cardData.cardWanted.image} height={200} style={{ objectFit: 'contain' }} />
-                    </div>
-                    <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '100px' }}>
-                      <Card.Text>
-                        Rarity: <span style={{ color: getTextColor(cardData.cardWanted.rarity) }}>{cardData.cardWanted.rarity}</span>
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
+    <div className="d-flex">
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <div className="d-flex tradeContainer flex-column px-3">
+          <h4>{trade.sender} would like to trade with you:</h4>
+          <div className="d-flex">
+            <div className="cardWanted">
+              <Card style={{ width: '18rem', margin: '10px' }} className="d-flex mr-3">
+                <Card.Title>Card wanted:</Card.Title>
+                <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
+                  <Card.Img variant="top" src={cardData.cardWanted.image} height={200} style={{ objectFit: 'contain' }} />
                 </div>
                 <div className="cardOffer d-flex mr-3">
                   <Card style={{ width: '18rem' , margin: '10px'}}>
@@ -99,14 +96,42 @@ const TradeItem = ({ trade }) => {
                   Deny
                 </Button>
               </div>
+                <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '100px' }}>
+                  <Card.Text>
+                    Rarity: <span style={{ color: getTextColor(cardData.cardWanted.rarity) }}>{cardData.cardWanted.rarity}</span>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             </div>
-        )}
-      </div>
+            <div className="cardOffer d-flex mr-3">
+              <Card style={{ width: '18rem', margin: '10px' }}>
+                <Card.Title>Card offered:</Card.Title>
+                <div style={{ maxHeight: '200px', overflow: 'hidden' }}>
+                  <Card.Img variant="top" src={cardData.cardOffer.image} height={200} style={{ objectFit: 'contain' }} />
+                </div>
+                <Card.Body style={{ maxHeight: 'none', overflow: 'hidden', height: '100px' }}>
+                  <Card.Text>
+                    Rarity: <span style={{ color: getTextColor(cardData.cardOffer.rarity) }}>{cardData.cardOffer.rarity}</span>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </div>
+          </div>
+          <div className="d-flex justify-content-center mt-4">
+            <Button id="buttonAccept" variant="primary" className="justify-content-center" style={{ backgroundColor: 'green' }} onClick={confirmTrade}>
+              Accept
+            </Button>
+            <Button id="buttonDeny" variant="primary" style={{ backgroundColor: 'red' }} onClick={denyTrade}>
+              Deny
+            </Button>
+          </div>
+        </div>
+      )}
+    </div>
   );
-  };
+};
 
-
-  TradeItem.propTypes = {
+TradeItem.propTypes = {
   trade: PropTypes.shape({
     sender: PropTypes.string,
     receiver: PropTypes.string,

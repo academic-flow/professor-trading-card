@@ -52,7 +52,6 @@ Meteor.publish(Trades.adminPublicationName, function () {
   return this.ready();
 });
 
-
 // planning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {

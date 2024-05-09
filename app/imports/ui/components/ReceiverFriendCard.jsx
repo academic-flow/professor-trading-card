@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 const ReceiverFriendCard = ({ user }) => {
   const removeFriend = () => {
+    // eslint-disable-next-line no-unused-vars
     Meteor.call('removeFriend', { sender: user.sender, receiver: user.receiver }, (error, result) => {
       if (error) {
         console.log(error);

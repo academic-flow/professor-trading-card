@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
 
-
 //  check if client is interacting with server
 if (Meteor.isServer) {
   Accounts.onCreateUser((options, user) => {
@@ -10,6 +9,7 @@ if (Meteor.isServer) {
       Roles.createRole(options.role, { unlessExists: true });
       Roles.addUsersToRoles(user._id, options.role);
     }
+    // eslint-disable-next-line no-param-reassign
     user.availablePackage = 1;
 
     return user;

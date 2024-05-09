@@ -4,16 +4,22 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Roles } from 'meteor/alanning:roles';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+// eslint-disable-next-line no-unused-vars
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListCard from '../pages/ListCard';
+// eslint-disable-next-line no-unused-vars
 import ListStuffAdmin from '../pages/ListStuffAdmin';
+// eslint-disable-next-line no-unused-vars
 import AddStuff from '../pages/AddStuff';
+// eslint-disable-next-line no-unused-vars
 import EditStuff from '../pages/EditStuff';
+// eslint-disable-next-line no-unused-vars
 import NotFound from '../pages/NotFound';
 import CardItem from '../components/CardItem';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
+// eslint-disable-next-line import/no-cycle
 import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
@@ -32,26 +38,26 @@ const App = () => {
     };
   });
   return (
-      <Router>
-        <div className="d-flex ">
-          <NavBar ready={ready}/>
-          <Routes>
-            <Route exact path="/" element={<Landing/>}/>
-            <Route path="/signin" element={<SignIn/>}/>
-            <Route path="/signup" element={<SignUp/>}/>
-            <Route path="/home" element={<ProtectedRoute><MainPage/></ProtectedRoute>}/>
-            <Route path="/friendlist" element={<ProtectedRoute><ListFriends/></ProtectedRoute>}/>
-            <Route path="/TeacherHome" element={<ProtectedRoute><TeacherHomePage/></ProtectedRoute>}/>
-            <Route path="/list" element={<ProtectedRoute><ListCard/></ProtectedRoute>}/>
-            <Route path="/notauthorized" element={<NotAuthorized/>}/>
-            <Route path="/signout" element={<SignOut/>}/>
-            <Route path="/CardItem" element={<CardItem card={1}/>}/>
-            <Route path="/friendcollection/:friendUserName" element={<ProtectedRoute><ViewCollection/></ProtectedRoute>}/>
-            <Route path="/add-card" element={<AdminProtectedRoute ready={ready}><TeacherAddCard/></AdminProtectedRoute>}/>
-          </Routes>
-        </div>
-      </Router>
-);
+    <Router>
+      <div className="d-flex ">
+        <NavBar ready={ready} />
+        <Routes>
+          <Route exact path="/" element={<Landing />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/home" element={<ProtectedRoute><MainPage /></ProtectedRoute>} />
+          <Route path="/friendlist" element={<ProtectedRoute><ListFriends /></ProtectedRoute>} />
+          <Route path="/TeacherHome" element={<ProtectedRoute><TeacherHomePage /></ProtectedRoute>} />
+          <Route path="/list" element={<ProtectedRoute><ListCard /></ProtectedRoute>} />
+          <Route path="/notauthorized" element={<NotAuthorized />} />
+          <Route path="/signout" element={<SignOut />} />
+          <Route path="/CardItem" element={<CardItem card={1} />} />
+          <Route path="/friendcollection/:friendUserName" element={<ProtectedRoute><ViewCollection /></ProtectedRoute>} />
+          <Route path="/add-card" element={<AdminProtectedRoute ready={ready}><TeacherAddCard /></AdminProtectedRoute>} />
+        </Routes>
+      </div>
+    </Router>
+  );
 };
 
 /*

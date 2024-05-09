@@ -16,6 +16,9 @@ const TeacherHome = () => (
         <Col>
           <h1>Username</h1>
           <Image src="/images/circle.png" roundedCircle />
+          {/* eslint-disable-next-line jsx-a11y/heading-has-content */}
+          <h1 />
+          <Image src="/images/UH-Seal.png" width="200" roundedCircle />
         </Col>
         <Col xs={8} className="d-flex flex-column justify-content-center">
           <h1>Teacher Home Page</h1>

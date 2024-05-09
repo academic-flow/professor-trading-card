@@ -14,7 +14,7 @@ const ViewCollection = () => {
   const [collection, setCollection] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
-  console.log(friendUserName)
+  console.log(friendUserName);
 
   const { ready, myCards, currentUserName } = useTracker(() => {
     const subscription = Meteor.subscribe(Cards.userPublicationName);

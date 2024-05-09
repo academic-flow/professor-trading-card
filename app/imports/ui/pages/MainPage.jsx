@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Container, Row, Col, Button, Alert } from 'react-bootstrap';
-import { PersonCircle, GiftFill } from 'react-bootstrap-icons';
+import { GiftFill } from 'react-bootstrap-icons';
 import { Meteor } from 'meteor/meteor';
 import { motion } from 'framer-motion';
 import { Trades } from '../../api/trade/Trade';
 import TradeItem from '../components/TradeComponent';
 import LoadingSpinner from '../components/LoadingSpinner';
-import styles from '../../../public/stylesheets/MainPage.css';
 
 const MainPage = () => {
   const [error, setError] = useState('');
