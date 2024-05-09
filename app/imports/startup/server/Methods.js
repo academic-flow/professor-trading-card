@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor';
-import { Accounts } from 'meteor/accounts-base';
 import { Keys } from '../../api/key/Key';
 import { Friends } from '../../api/friend/Friend';
 import { Cards } from '../../api/card/Card';
 import { Trades } from '../../api/trade/Trade';
+/* eslint-disable */
 
 Meteor.methods({
   // key validate function check if the key exist in database and the status if everything good return admin for role

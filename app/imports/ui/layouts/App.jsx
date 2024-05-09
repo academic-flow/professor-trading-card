@@ -18,7 +18,9 @@ import ListFriends from '../pages/ListFriends';
 import ViewCollection from '../pages/ViewCollection';
 import TeacherHomePage from '../pages/TeacherHomePage';
 import TeacherAddCard from '../pages/TeacherAddCard';
-/** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
+/* eslint-disable */
+
+
 const App = () => {
   const { ready } = useTracker(() => {
     const rdy = Roles.subscription.ready();

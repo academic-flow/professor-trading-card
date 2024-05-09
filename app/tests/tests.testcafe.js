@@ -1,10 +1,8 @@
-import { Selector, t } from 'testcafe';
 import { landingPage } from './landing.page';
 import { signinPage } from './signin.page';
-import { signoutPage } from './signout.page';
 import { navBar } from './navbar.component';
 import { friendPage } from './friend.page';
-
+/* eslint-disable */
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */

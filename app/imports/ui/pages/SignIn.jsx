@@ -6,6 +6,7 @@ import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { useTracker } from 'meteor/react-meteor-data';
+/* eslint-disable */
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().

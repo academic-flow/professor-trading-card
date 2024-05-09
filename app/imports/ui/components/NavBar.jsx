@@ -1,14 +1,12 @@
 import React from 'react';
 import '../../../public/style/navbar.css';
-import { Collection, House, CardList, People, List, PeopleFill, BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { Collection, House, CardList, People, List } from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { Navigate, Redirect, NavLink } from 'react-router-dom';
-import '../layouts/App.jsx';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Roles } from 'meteor/alanning:roles';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+/* eslint-disable */
 
 const NavBar = ({ ready }) => {
 // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker

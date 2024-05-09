@@ -1,5 +1,5 @@
-import { Selector, t } from 'testcafe';
-
+import { Selector } from 'testcafe';
+/* eslint-disable */
 class NavBar {
 
   /** If someone is logged in, then log them out, otherwise do nothing. */

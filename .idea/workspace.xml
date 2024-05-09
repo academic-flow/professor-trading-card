@@ -7,7 +7,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="181c6068-95ba-48ec-b7ff-c063932ee0b3" name="Changes" comment="" />
+    <list default="true" id="181c6068-95ba-48ec-b7ff-c063932ee0b3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/ReceiverFriendCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/ReceiverFriendCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/SenderFriendCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/SenderFriendCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/TeacherAddCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/TeacherAddCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/TeacherHomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/TeacherHomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/friend.page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/friend.page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/navbar.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/navbar.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/signin.page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/signin.page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests/tests.testcafe.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/tests.testcafe.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +62,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/adamwinfield-smith/Documents/GitHub/professor-trading-card/app/public/images",
     "list.type.of.created.stylesheet": "CSS",
@@ -82,10 +99,23 @@
       <workItem from="1714266681756" duration="689000" />
       <workItem from="1714268082094" duration="2131000" />
       <workItem from="1714272531177" duration="19410000" />
+      <workItem from="1715226557656" duration="1653000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/imports/ui/layouts/App.jsx</url>
+          <line>10</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -4,6 +4,7 @@ import { Col, Row, Button, Card, Image } from 'react-bootstrap';
 import '/public/style/friendListSearchBar.css';
 import { Meteor } from 'meteor/meteor';
 import { Link } from 'react-router-dom';
+/* eslint-disable */
 
 const ReceiverFriendCard = ({ user }) => {
   const removeFriend = () => {

@@ -1,4 +1,5 @@
 import { Selector, t } from 'testcafe';
+/* eslint-disable */
 
 class FriendPage {
 

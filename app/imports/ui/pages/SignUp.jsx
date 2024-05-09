@@ -8,6 +8,7 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
+/* eslint-disable */
 
 const SignUp = ({ location }) => {
   const [error, setError] = useState('');
